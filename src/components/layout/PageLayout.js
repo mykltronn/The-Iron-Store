@@ -5,9 +5,11 @@ import Footer from './Footer.js';
 export default class PageLayout extends Component {
     render(){
         return (
-            <Header />
-            {this.props.children}
-            <Footer />
+            <div>
+                <Header />
+                {this.props.children}
+                <Footer />
+            </div>
         )
     }
 }

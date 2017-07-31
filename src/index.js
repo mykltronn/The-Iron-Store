@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import PageLayout from './components/layout/PageLayout.js';
 import Home from './components/Home.js'
 import ProductInfo from './components/ProductInfo.js';
-import ProductMenu from './ProductMenu.js';
+import ProductMenu from './components/ProductMenu.js';
 
 
 ReactDOM.render(
