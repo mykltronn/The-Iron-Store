@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import PageLayout from './components/layout/PageLayout.js';
-import Home from './components/Home.js'
-import ProductInfo from './components/ProductInfo.js';
-import ProductMenu from './components/ProductMenu.js';
-
+// vv  import route components
+import Splash from './components/splash/Splash.js';
+import Shop from './components/shop/Shop.js';
+import Checkout from './components/checkout/Checkout.js';
+import Reviews from './components/reviews/Reviews.js';
+import Admin from './components/admin/Admin.js';
 
 ReactDOM.render(
     <BrowserRouter>
-      <PageLayout>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/people/:actor" component={ProductInfo} />
-              <Route path="/people" component={ProductMenu} />
-            </Switch>
-        </PageLayout>
+        <Switch>
+            <Route exact path="/" component={Splash} />
+            <Route path="/shop/" component={Shop} />
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/reviews" component={Reviews} />
+            <Router path="/admin" component={Admin} />
+        </Switch>
     </BrowserRouter>
     , document.getElementById('root'));
