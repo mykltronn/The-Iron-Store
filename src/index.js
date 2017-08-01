@@ -16,11 +16,11 @@ ReactDOM.render(
     <BrowserRouter>
         <TempHeader>
             <Switch>
+                <Route exact path="/" component={Splash} />
                 <Route path="/shop" component={Shop} />
                 <Route path="/checkout" component={Checkout} />
                 <Route path="/reviews" component={Reviews} />
                 <Route path="/admin" component={Admin} />
-                <Route path="/" component={Splash} />
             </Switch>
         </TempHeader>
     </BrowserRouter>
