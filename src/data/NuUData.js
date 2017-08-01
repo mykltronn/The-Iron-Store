@@ -1,4 +1,4 @@
-const NuUData =
+export const NuUData =
 {
   results : [
   {
@@ -36,7 +36,7 @@ const NuUData =
     reviews: [
     {
       name: "Robert Carlson",
-      rating: ,
+      rating: 4,
       review: "I always wanted to be the mother of dragons and now everyone thinks I am!"
     },
     {
@@ -48,4 +48,5 @@ const NuUData =
   ]
 }
 
-export default NuUData;
+// export default NuUData;
+// NuUData

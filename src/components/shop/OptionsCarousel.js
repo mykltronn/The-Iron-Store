@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import Cart from './Cart.js'
 
 export default class OptionsCarousel extends Component {
-    // about this component:
-        // How does it pass information to the Cart?
+
+    // Cart is a child of this component so that Cart can recieve info about what is being selected and render it right away. However, we may wish to store the user selections in a variable rather than in state or something I need a break.
 
     render() {
         return (
-            <div>
-                <h1>Options for {this.props.selectedU}</h1>
+            <div className="cart-and-carousel">
+                <Cart selectedU={this.props.selectedU}/>
+                <div className="options-carousel">
+                    <h1>Options for {this.props.selectedU.title}</h1>
+                </div>
             </div>
         )
     }
