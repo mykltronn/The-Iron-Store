@@ -36,4 +36,4 @@ var NuUData =
   ]
 }
 
-export NuUData;
+export default NuUData;
