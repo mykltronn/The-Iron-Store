@@ -1,13 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// export default class TempHeader extends Component {
-//     render() {
-//         return (
-//
-//         )
-//     }
-// }
 const TempHeader = (props) => {
     return (
         <div>
