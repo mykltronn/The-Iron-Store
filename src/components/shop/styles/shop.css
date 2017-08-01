@@ -1,0 +1,18 @@
+.carousel-box {
+    width: 800px;
+    height: 400px;
+    background-color: pink;
+    margin-top: 100px;
+}
+
+.carousel-item {
+    margin: 180px;
+}
+
+.form {
+    margin: -80px 0px 0px 20px;
+}
+
+.fa {
+    font-size: 80px;
+}

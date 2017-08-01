@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import styles
+import './styles/shop.css'
 // import children
 // import ProductCard from './ProductCard.js';
 // import Cart from './Cart.js';
@@ -9,8 +11,7 @@ export default class Shop extends Component {
 
     render() {
         return (
-            <div>
-                <h1>This is the Shop Page, son!</h1>
+            <div className="shop-component">
                 <OptionsCarousel />
             </div>
 

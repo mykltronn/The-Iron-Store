@@ -8,19 +8,19 @@ import Shop from './components/shop/Shop.js';
 import Checkout from './components/checkout/Checkout.js';
 import Reviews from './components/reviews/Reviews.js';
 import Admin from './components/admin/Admin.js';
-// remove for produciton v v
+// remove for production v v
 import TempHeader from './TempHeader.js';
 
 
 ReactDOM.render(
     <BrowserRouter>
-        <TempHeader> {/*this can be removed, it's just for development navigation */}
+        <TempHeader>
             <Switch>
-                <Route exact path="/" component={Splash} />
                 <Route path="/shop" component={Shop} />
                 <Route path="/checkout" component={Checkout} />
                 <Route path="/reviews" component={Reviews} />
                 <Route path="/admin" component={Admin} />
+                <Route path="/" component={Splash} />
             </Switch>
         </TempHeader>
     </BrowserRouter>
