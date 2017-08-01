@@ -5,6 +5,9 @@ export default class ProductCard extends Component {
 
     render() {
         return (
+            <div className="product-card">
+                
+            </div>
 
         )
     }
