@@ -7,46 +7,46 @@ export default class ReviewCard extends Component {
    constructor(props) {
       super(props)
 
-      this.renderStars = this.renderStars.bind(this);
+      // this.renderStars = this.renderStars.bind(this);
    }
 
 
-   renderStars = (num, star) => {
-      const num = this.props.data.rating;
-      const star = ['','★','★ ★','★ ★ ★','★ ★ ★ ★','★ ★ ★ ★ ★'];
-      // console.log(star[num]);
-      // return star[num];
-
-      // num = this.props.rating;
-      // if (num = 0) {
-      //    return (
-      //       <div className="0"></div>
-      //    )}
-      // if (num = 1) {
-      //    return (
-      //       <div className="1">★</div>
-      //    )}
-      // if (num = 2) {
-      //    return (
-      //       <div className="2">★★</div>
-      //    )}
-      // if (num = 3) {
-      //    return (
-      //       <div className="3">★★★</div>
-      //    )}
-      //
-      // if (num = 4) {
-      //    return (
-      //       <div className="4">★★★★</div>
-      //    )}
-      //
-      // if (num = 5)  {
-      //    return (
-      //       <div className="5">★★★★★</div>
-      //    )}
-      // return
-
-   }
+   // renderStars = (num, star) => {
+   //    const num = this.props.data.rating;
+   //    const star = ['','★','★ ★','★ ★ ★','★ ★ ★ ★','★ ★ ★ ★ ★'];
+   //    // console.log(star[num]);
+   //    // return star[num];
+   //
+   //    // num = this.props.rating;
+   //    // if (num = 0) {
+   //    //    return (
+   //    //       <div className="0"></div>
+   //    //    )}
+   //    // if (num = 1) {
+   //    //    return (
+   //    //       <div className="1">★</div>
+   //    //    )}
+   //    // if (num = 2) {
+   //    //    return (
+   //    //       <div className="2">★★</div>
+   //    //    )}
+   //    // if (num = 3) {
+   //    //    return (
+   //    //       <div className="3">★★★</div>
+   //    //    )}
+   //    //
+   //    // if (num = 4) {
+   //    //    return (
+   //    //       <div className="4">★★★★</div>
+   //    //    )}
+   //    //
+   //    // if (num = 5)  {
+   //    //    return (
+   //    //       <div className="5">★★★★★</div>
+   //    //    )}
+   //    // return
+   //
+   // }
 
 
     render() {

@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import Cart from './Cart.js'
+import Waypoint from 'react-waypoint'
 // import * as Questions from './Questions.js'
 
 export default class OptionsCarousel extends Component {
+    constructor(props) {
+        super(props)
+
+        this.setQuestion = this.setQuestion.bind(this)
+        this.renderQuestion = this.renderQuest.bind(this)
+
+    }
 
     // Cart is a child of this component so that Cart can recieve info about what is being selected and render it right away. However, we may wish to store the user selections in a variable rather than in state or something I need a break.
 
@@ -40,6 +48,21 @@ this.state = {
 Questions live in a Questions.js?
 
 */
+    setQuestion(question) {
+        this.setState({ question })
+    }
+
+    renderQuestion() {
+        if (!this.state.question) {
+            return;
+        }
+
+        return (
+            <div className="question">
+                {this.state.question}
+            </div>
+        );
+    }
 
 
     render() {
@@ -47,35 +70,45 @@ Questions live in a Questions.js?
             <div className="cart-and-carousel">
 
                 <Cart selectedU={this.props.selectedU}/>
-
-                <div className="options-carousel">
-                    <h1>Options for {this.props.selectedU.title}</h1>
-                    <form>
-                        <label>Question 1</label><br/>
-                        <input type="radio" name="q1" value="option1" />option 1<br/>
-                        <input type="radio" name="q1" value="option2" />option 2<br/>
-                        <input type="radio" name="q1" value="option3" />option 3<br/>
-                    </form>
-
-                    <form>
-                        <label>Question 2</label><br/>
-                        <input type="radio" name="q2" value="option1"/>option 1<br/>
-                        <input type="radio" name="q2" value="option2"/>option 2<br/>
-                        <input type="radio" name="q2" value="option3"/>option 3<br/>
-                    </form>
-
-                    <form>
-                        <label>Question 3</label><br/>
-                        <input type="radio" name="q3" value="option1"/>option 1<br/>
-                        <input type="radio" name="q3" value="option2"/>option 2<br/>
-                        <input type="radio" name="q3" value="option3"/>option 3<br/>
-                    </form>
+                {this.renderMessage()}
+                <div>
+                    <Waypoint
+                        onEnter={this.setQuestion()}
+                        onLeave={this.setQuestion()}
+                    />
                 </div>
+
             </div>
         )
     }
 }
 
+
+/*
+<div className="options-carousel">
+    <h1>Options for {this.props.selectedU.title}</h1>
+    <form>
+        <label>Question 1</label><br/>
+        <input type="radio" name="q1" value="option1" />option 1<br/>
+        <input type="radio" name="q1" value="option2" />option 2<br/>
+        <input type="radio" name="q1" value="option3" />option 3<br/>
+    </form>
+
+    <form>
+        <label>Question 2</label><br/>
+        <input type="radio" name="q2" value="option1"/>option 1<br/>
+        <input type="radio" name="q2" value="option2"/>option 2<br/>
+        <input type="radio" name="q2" value="option3"/>option 3<br/>
+    </form>
+
+    <form>
+        <label>Question 3</label><br/>
+        <input type="radio" name="q3" value="option1"/>option 1<br/>
+        <input type="radio" name="q3" value="option2"/>option 2<br/>
+        <input type="radio" name="q3" value="option3"/>option 3<br/>
+    </form>
+</div>
+*/
 
 
 /*
