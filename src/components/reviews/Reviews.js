@@ -7,9 +7,6 @@ import ReviewCard from './ReviewCard.js';
 import NuUData from '../../data/NuUData.js';
 
 // global var for data
-// const products = NuUData.results;
-// const data = NuUData.results;
-
 const products = NuUData.results;
 const allReviews = [];
 // const stateReviews = [];
@@ -18,13 +15,18 @@ export default class Reviews extends Component {
    constructor(props) {
       super(props)
 
+      this.getReviews = this.getReviews.bind(this);
+      this.storeReviewCards = this.storeReviewCards.bind(this);
+
       this.state = {
          reviews: [],
+
          // NOTE: keep -VVV- for add review option.
          // name: '',
          // rating: 0,
          // review: ''
       }
+
    }
 
 // child component for storing in state/ render -VVV-
@@ -53,6 +55,43 @@ export default class Reviews extends Component {
    //    console.log(this.state.reviews)
    //    return this.state.reviews;
    // }
+
+   getReviews = () => {
+      products.map((product) => {
+         allReviews.push(product.reviews)
+         return allReviews;
+      })
+      console.log(allReviews);
+      allReviews.map((reviewArr) => {
+         reviewArr.map((review) => {
+            // stateReviews.push(review);
+            this.state.reviews.push(review)
+            return this.state.reviews;
+         })
+         console.log(this.state.reviews)
+         return this.state.reviews;
+      })
+   }
+      // console.log(this.state.reviews)
+      // return this.state.reviews;
+   storeReviewCards = () => {
+         let cardList = this.state.reviews.map((review) => {
+            return (
+               <ReviewCard key={review.name} name={review.name} rating={review.rating} review={review.review}   />
+            )
+         })
+
+         this.setState({reviews: cardList})
+         return this.state.reviews
+   }
+
+   componentDidMount() {
+      this.getReviews();
+      this.storeReviewCards();
+   }
+
+      // console.log(this.state.reviews)
+
 
 // DOES NOT WORK
    // componentDidMount() {
@@ -95,6 +134,8 @@ export default class Reviews extends Component {
         return (
             <div>
                 <h1>This is the Reviews Page!</h1>
+                {this.state.reviews}
+               //  {this.props.children}
             </div>
         )
     }
