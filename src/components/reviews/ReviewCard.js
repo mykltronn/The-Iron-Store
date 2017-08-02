@@ -7,13 +7,13 @@ export default class ReviewCard extends Component {
    constructor(props) {
       super(props)
 
-      this.renderStars = this.renderStars.bind(this);
-   }
+  //     this.renderStars = this.renderStars.bind(this);
+  //  }
 
 
-   renderStars = (num, star) => {
-      const num = this.props.data.rating;
-      const star = ['','★','★ ★','★ ★ ★','★ ★ ★ ★','★ ★ ★ ★ ★'];
+  //  renderStars = (num, star) => {
+  //     const num = this.props.data.rating;
+  //     const star = ['','★','★ ★','★ ★ ★','★ ★ ★ ★','★ ★ ★ ★ ★'];
       // console.log(star[num]);
       // return star[num];
 
