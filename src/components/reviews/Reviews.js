@@ -35,25 +35,25 @@ export default class Reviews extends Component {
               rating: response[i].reviews[n].rating,
               review: response[i].reviews[n].review,
               parent_id: response[i]._id
-           }
+            }
             tempArray.push(review);
           }
         }
-        let reviewCards = tempArray.map((review)=>{
+        let reviewCards = tempArray.map((review)=> {
           return(
              <ReviewCard key={review._id} data={review} />
           )
         })
         this.setState({reviews: reviewCards});
-    })
-   }
+      })
+  }
 
    render() {
-      return (
-         <div>
-            <h1>This is the Reviews Page!</h1>
-            {this.state.reviews}
-         </div>
-        )
+     return (
+        <div>
+          <h1>This is the Reviews Page!</h1>
+          {this.state.reviews}
+        </div>
+     )
    }
 }
