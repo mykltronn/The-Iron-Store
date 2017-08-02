@@ -8,7 +8,7 @@ import './Reviews.css';
 import  ReviewCard  from './ReviewCard.js';
 
 // import data
-import NuUData from '../../data/NuUData.js';
+import { NuUData } from '../../data/NuUData.js';
 
 // global vars for data functions
 const products = NuUData.results;
