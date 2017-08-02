@@ -1,12 +1,16 @@
 // reviews.js
 import React, { Component } from 'react';
+
+// import styles
+import './Reviews.css';
+
 // import children
 import  ReviewCard  from './ReviewCard.js';
 
 // import data
 import NuUData from '../../data/NuUData.js';
 
-// global var for data
+// global vars for data functions
 const products = NuUData.results;
 const allReviews = [];
 
