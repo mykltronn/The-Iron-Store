@@ -20,7 +20,6 @@ export default class Reviews extends Component {
 
       this.state = {
          reviews: [],
-         elements:[]
          // NOTE: keep -VVV- for add review option.
          // name: '',
          // rating: 0,
@@ -28,48 +27,32 @@ export default class Reviews extends Component {
       }
    }
 
-   componentDidMount() {
-      // this will become a fetch to our api/ req to our db, handle with .then()'s like usual
-      // clean/ lock -VVV- this mess up
-      // let stateReviews = [];
+// child component for storing in state/ render -VVV-
+// <ReviewCard key={review.name} name={review.name} rating={review.rating} review={review.review}   />
 
-      let reviewList = products => products.map((product) => {
-         allReviews.push(product.reviews)
-         return allReviews;
-      })
-      // console.log(allReviews);
-      allReviews.map((reviewArr) => {
-         reviewArr.map((review) => {
-            this.state.reviews.push(review)
-            return this.state.reviews;
-            // return(
-            //    <ReviewCard key={review.name} name={review.name} rating={review.rating} review={review.review}   />
-            // )
-
-         })
-         return this.state.reviews;
-      })
-
-      childComps() {
-         this.state.reviews.map((review) => {
-         return (
-               <ReviewCard key={review.name} name={review.name} rating={review.rating} review={review.review}   />
-            )
-      })
-      this.setState{elements}
-
-      // console.log(this.state.reviews)
-      // return this.state.reviews;
-
-   }
-
-
-
-
-
-
-
-
+// DOES WORK, 1/2. drops state before component render....
+   // componentDidMount() {
+   //    // this will become a fetch to our api/ req to our db, handle with .then()'s like usual
+   //    // clean/ lock -VVV- this mess up
+   //    // let allReviews = [];
+   //    // let stateReviews = [];
+   //    products.map((product) => {
+   //       allReviews.push(product.reviews)
+   //       return allReviews;
+   //    })
+   //    // console.log(allReviews);
+   //    allReviews.map((reviewArr) => {
+   //       reviewArr.map((review) => {
+   //          // stateReviews.push(review);
+   //          this.state.reviews.push(review)
+   //          return this.state.reviews;
+   //       })
+   //       // console.log(this.state.reviews)
+   //       return this.state.reviews;
+   //    })
+   //    console.log(this.state.reviews)
+   //    return this.state.reviews;
+   // }
 
 // DOES NOT WORK
    // componentDidMount() {
@@ -106,29 +89,7 @@ export default class Reviews extends Component {
    //
    // }
 
-// DOES WORK, probably needs to add render
-   // componentDidMount() {
-   //    // this will become a fetch to our api/ req to our db, handle with .then()'s like usual
-   //    // clean/ lock -VVV- this mess up
-   //    // let allReviews = [];
-   //    // let stateReviews = [];
-   //    products.map((product) => {
-   //       allReviews.push(product.reviews)
-   //       return allReviews;
-   //    })
-   //    // console.log(allReviews);
-   //    allReviews.map((reviewArr) => {
-   //       reviewArr.map((review) => {
-   //          // stateReviews.push(review);
-   //          this.state.reviews.push(review)
-   //          return this.state.reviews;
-   //       })
-   //       // console.log(this.state.reviews)
-   //       return this.state.reviews;
-   //    })
-   //    console.log(this.state.reviews)
-   //    return this.state.reviews;
-   // }
+
 
     render() {
         return (
