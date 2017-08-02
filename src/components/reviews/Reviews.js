@@ -27,19 +27,18 @@ export default class Reviews extends Component {
       .then(resp => {
         let tempArray = [];
         let response = resp;
-        for(let i = 0; i < response.length; i++){
-          for(let n = 0; n < response[i].reviews.length; n++){
-           let review = {
+        for(let i = 0; i < response.length; i++) {
+          for(let n = 0; n < response[i].reviews.length; n++) {
+            let review = {
               name: response[i].reviews[n].name,
               _id: response[i].reviews[n]._id,
               rating: response[i].reviews[n].rating,
               review: response[i].reviews[n].review,
               parent_id: response[i]._id
            }
-           tempArray.push(review);
+            tempArray.push(review);
           }
         }
-        console.log("Temp Array" + tempArray);
         let reviewCards = tempArray.map((review)=>{
           return(
              <ReviewCard key={review._id} data={review} />
