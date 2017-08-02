@@ -1,4 +1,4 @@
-const NuUData =
+export const NuUData =
 {
   results : [
   {
@@ -48,4 +48,5 @@ const NuUData =
   ]
 }
 
-export default NuUData;
+// export default NuUData;
+// NuUData
