@@ -1,0 +1,63 @@
+*{
+  -webkit-transition:all .25s ease;
+}
+
+.bodydiv {
+  min-height: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-flow: column nowrap;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.titlediv {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 65vw;
+}
+
+button {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: black;
+  background-color: #7ba547;
+  height: 50px;
+  width: 100px;
+  color: white;
+}
+
+button:hover {
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: black;
+  background-color: #9fd65c;
+  height: 55px;
+  width: 108px;
+  color: white;
+}
+
+.buttondiv {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+}
