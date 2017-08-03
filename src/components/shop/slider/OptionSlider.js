@@ -19,11 +19,13 @@ export default class OptionsSlider extends Component {
 
     render() {
         return (
-            <div className="slideshow">
+            <div className="cart-slider">
                 <Cart selectedU={this.props.selectedU}/>
-                <Slides data={questions} slide={this.state.currentSlide} />
-                {/* <Pagination data={questions} /> */}
-                <Controls data={questions} slide={this.state.currentSlide} changeSlide={this.changeSlide.bind(this)} />
+                <div className="slider">
+                    <Slides data={questions} slide={this.state.currentSlide} />
+                    {/* <Pagination data={questions} /> */}
+                    <Controls data={questions} slide={this.state.currentSlide} changeSlide={this.changeSlide.bind(this)} />
+                </div>
             </div>
         );
     }

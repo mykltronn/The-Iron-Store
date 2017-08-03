@@ -13,50 +13,64 @@
     height: 100px;
 }
 
-/* test */
-
-    .slides {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .slide {
-      display: none;
-    }
-    .slide.slide--active {
-      display: block;
-    }
-    .slide img {
-      height: 200px;
-    }
-    .toggle {
-      background: blue;
-      color: white;
-      display: block;
-      padding: 20px;
-      position: absolute;
-      top: 50%;
-    }
-    .toggle-prev {
-      left: 0;
-    }
-    .toggle--next {
-      right: 0;
-    }
-    .pagination {
-      margin: 20px;
-      text-align: center;
-    }
-    .pager {
-      background-color: red;
-      display: inline-block;
-      height: 20px;
-      margin: 10px;
-      overflow: hidden;
-      text-indent: -9000px;
-      white-space: nowrap;
-      width: 20px;
-    }
-
 /*=================== v v slider styles v v =====================*/
+/*.pagination {
+  margin: 20px;
+  text-align: center;
+}
+.pager {
+  background-color: red;
+  display: inline-block;
+  height: 20px;
+  margin: 10px;
+  overflow: hidden;
+  text-indent: -9000px;
+  white-space: nowrap;
+  width: 20px;
+}
+*/
+
+.slider {
+    height: 400px;
+    width: 80vw;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.slides {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.slide--active {
+  display: block;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.toggle {
+  background: blue;
+  color: white;
+  display: block;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+}
+
+.toggle-prev {
+  left: 0;
+}
+
+.toggle--next {
+  right: 0;
+}
