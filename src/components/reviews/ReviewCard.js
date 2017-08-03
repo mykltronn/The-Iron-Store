@@ -6,6 +6,7 @@ var star = ['','★','★ ★','★ ★ ★','★ ★ ★ ★','★ ★ ★ ★ 
 export default class ReviewCard extends Component {
    constructor(props) {
       super(props)
+
       this.renderStars = this.renderStars.bind(this);
    }
 

@@ -1,22 +1,3 @@
-/*.carousel-box {
-    width: 800px;
-    height: 400px;
-    background-color: pink;
-    margin-top: 100px;
-}
-
-.carousel-item {
-    margin: 180px;
-}
-
-.form {
-    margin: -80px 0px 0px 20px;
-}
-
-.fa {
-    font-size: 80px;
-}*/
-
 .product-card {
     display: flex;
     flex-direction: row;
@@ -32,17 +13,64 @@
     height: 100px;
 }
 
-.options-carousel {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    background-color: black;
-    color: white;
-    width: 800px;
+/*=================== v v slider styles v v =====================*/
+/*.pagination {
+  margin: 20px;
+  text-align: center;
+}
+.pager {
+  background-color: red;
+  display: inline-block;
+  height: 20px;
+  margin: 10px;
+  overflow: hidden;
+  text-indent: -9000px;
+  white-space: nowrap;
+  width: 20px;
+}
+*/
+
+.slider {
     height: 400px;
+    width: 80vw;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: 3px solid black;
+    border-radius: 5px;
 }
 
-.vert-space {
-    height: 800px;
+.slides {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.slide--active {
+  display: block;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.toggle {
+  background: blue;
+  color: white;
+  display: block;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+}
+
+.toggle-prev {
+  left: 0;
+}
+
+.toggle--next {
+  right: 0;
 }
