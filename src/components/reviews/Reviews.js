@@ -7,19 +7,10 @@ import './Reviews.css';
 // import children
 import  ReviewCard  from './ReviewCard.js';
 
-// import data
-import NuUData from '../../data/NuUData.js';
-
-// global vars for data functions
-const products = NuUData.results;
-const allReviews = [];
 
 export default class Reviews extends Component {
    constructor() {
       super()
-
-      this.getReviews = this.getReviews.bind(this);
-      this.storeReviewCards = this.storeReviewCards.bind(this);
 
       this.state = {
          reviews: [],
@@ -28,46 +19,41 @@ export default class Reviews extends Component {
          // rating: 0,
          // review: ''
       }
-   }
+  }
 
-   getReviews = () => {
-      products.map((product) => {
-         allReviews.push(product.reviews)
-         return allReviews;
+  componentDidMount() {
+    fetch("https://intense-river-24910.herokuapp.com/api/products")
+    .then(resp => resp.json())
+      .then(resp => {
+        let tempArray = [];
+        let response = resp;
+        for(let i = 0; i < response.length; i++) {
+          for(let n = 0; n < response[i].reviews.length; n++) {
+            let review = {
+              name: response[i].reviews[n].name,
+              _id: response[i].reviews[n]._id,
+              rating: response[i].reviews[n].rating,
+              review: response[i].reviews[n].review,
+              parent_id: response[i]._id
+            }
+            tempArray.push(review);
+          }
+        }
+        let reviewCards = tempArray.map((review)=> {
+          return(
+             <ReviewCard key={review._id} data={review} />
+          )
+        })
+        this.setState({reviews: reviewCards});
       })
-      // console.log(allReviews);
-      allReviews.map((reviewArr) => {
-         reviewArr.map((review) => {
-            // stateReviews.push(review);
-            this.state.reviews.push(review)
-            return this.state.reviews;
-         })
-         // console.log(this.state.reviews)
-         return this.state.reviews;
-      })
-   }
+  }
 
-   storeReviewCards = () => {
-         let cardList = this.state.reviews.map((review, index) => {
-            return (
-               <ReviewCard key={index} data={review} />
-            )
-         })
-         this.setState({reviews: cardList})
-         return this.state.reviews
+   render() {
+     return (
+        <div>
+          <h1>This is the Reviews Page!</h1>
+          {this.state.reviews}
+        </div>
+     )
    }
-
-   componentDidMount() {
-      this.getReviews();
-      this.storeReviewCards();
-   }
-
-    render() {
-        return (
-            <div>
-                <h1>This is the Reviews Page!</h1>
-                {this.state.reviews}
-            </div>
-        )
-    }
 }
