@@ -6,30 +6,28 @@ export default class Controls extends Component {
 
         this.togglePrev = this.togglePrev.bind(this)
         this.toggleNext = this. toggleNext.bind(this)
-
-        this.state = {
-            currentSlide: 0
-        }
     }
+
+    // controls needs to know which slide we're currently on...
 
     togglePrev() {
         console.log("togglePrev runs");
-        var current = this.state.currentSlide;
+        var current = this.props.slide;
         var next = current + 1;
         if (next > this.props.data.length - 1) {
             next = 0;
         }
-        this.setState({ currentSlide: next })
+        this.props.changeSlide(next)
     }
 
     toggleNext() {
         console.log("toggleNext runs");
-        var current = this.state.currentSlide;
+        var current = this.props.slide;
         var prev = current - 1;
         if (prev < 0) {
             prev = this.props.data.length - 1;
         }
-        this.setState({ currentSlide: prev})
+        this.props.changeSlide(prev)
     }
 
     render() {

@@ -12,24 +12,9 @@
     width: 100%;
     height: 100px;
 }
-/*
-.container {
-    margin: 0 auto;
-    padding: 40px;
-    width: 80%;
-    color: #333;
-    background: #419be0;
-
-}*/
 
 /* test */
-    * {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-      line-height: 20px;
-      font-size: 15px;
-    }
+
     .slides {
       display: block;
       width: 100%;
@@ -73,3 +58,5 @@
       white-space: nowrap;
       width: 20px;
     }
+
+/*=================== v v slider styles v v =====================*/

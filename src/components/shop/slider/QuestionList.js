@@ -1,32 +1,36 @@
 export const questions = [
   {
-    id         : "slide1",
-    imagePath  : "http://placekitten.com/g/400/300",
-    imageAlt   : "Slide 1 Image",
-    title      : "Slide 1",
-    subtitle   : "Slide 1 Image SubTitle",
-    text       : "Slide 1 Image Text",
-    action     : "Slide 1 Image Action",
-    actionHref : "href"
+    id: "slide1",
+    title: "Question 1",
+    label: "How many friends?",
+    options: [
+        "Q1 Opt 1",
+        "Q1 Opt 2"
+    ],
+    action: "Slide 1 Image Action"
   },
   {
-    id         : "slide2",
-    imagePath  : "http://placekitten.com/g/200/300",
-    imageAlt   : "Slide 2 Image",
-    title      : "Slide 2",
-    subtitle   : "Slide 2 Image SubTitle",
-    text       : "Slide 2 Image Text",
-    action     : "Slide 2 Image Action",
-    actionHref : "href"
+    id: "slide2",
+    title: "Question 2",
+    label: "How many whatevers?",
+    options: [
+        "Q2 Opt 1",
+        "Q2 Opt 2",
+        "Q2 Opt 3",
+        "Q2 Opt 4",
+        "Q2 Opt 5"
+    ],
+    action: "Slide 2 Image Action"
   },
   {
-    id         : "slide3",
-    imagePath  : "http://placekitten.com/g/300/150",
-    imageAlt   : "Slide 3 Image",
-    title      : "Slide 3",
-    subtitle   : "Slide 3 Image SubTitle",
-    text       : "Slide 3 Image Text",
-    action     : "Slide 3 Image Action",
-    actionHref : "href"
+    id: "slide3",
+    title: "Question 3",
+    label: "Also something else?",
+    options: [
+        "Q3 Opt 1",
+        "Q3 Opt 2",
+        "Q3 Opt 3"
+    ],
+    action: "Slide 3 Image Action"
   },
 ];
