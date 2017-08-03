@@ -10,7 +10,7 @@ export default class Controls extends Component {
 
     // controls needs to know which slide we're currently on...
 
-    togglePrev() {
+    toggleNext() {
         console.log("togglePrev runs");
         var current = this.props.slide;
         var next = current + 1;
@@ -20,7 +20,7 @@ export default class Controls extends Component {
         this.props.changeSlide(next)
     }
 
-    toggleNext() {
+    togglePrev() {
         console.log("toggleNext runs");
         var current = this.props.slide;
         var prev = current - 1;

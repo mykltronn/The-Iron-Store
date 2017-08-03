@@ -10,7 +10,7 @@ export default class Slide extends Component {
                     {this.props.options.map(option => {
                         return (
                             <div className="button-label-div" key={option}>
-                                <input className="radio-button"  type="radio" value={option}/><span className="radio-button-label">{option}</span>
+                                <input className="radio-button"  type="radio" name="button" value={option}/><span className="radio-button-label">{option}</span>
                             </div>
                         )
                     })}
