@@ -5,7 +5,7 @@ import './styles/shop.css'
 import { NuUData } from '../../data/NuUData.js'
 // import children
 import ProductCard from './ProductCard.js';
-import OptionsCarousel from './OptionsCarousel.js';
+import OptionSlider from './slider/OptionSlider.js'
 
 
 
@@ -21,14 +21,11 @@ export default class Shop extends Component {
     }
 
     handleClick(event) {
-        console.log(event.target.id);
-        console.log(NuUData.results[0].id);
         for(let i=0; i < NuUData.results.length; i++){
             if(event.target.id == NuUData.results[i].id) {
                 this.setState({ selectedU: NuUData.results[i] })
             }
         }
-        // this.setState({ selectedU: event.target.id})
     }
 
 
@@ -37,7 +34,7 @@ export default class Shop extends Component {
         if(this.state.selectedU) {
             return (
                 <div>
-                    <OptionsCarousel selectedU={this.state.selectedU}/>
+                    <OptionSlider selectedU={this.state.selectedU}/>
                 </div>
             )
         }
