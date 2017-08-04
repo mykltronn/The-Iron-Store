@@ -7,7 +7,7 @@ class SplashButtonOne extends Component {
 
     render() {
         return (
-          <div><button className="btn"><Link to="/reviews">Reviews</Link></button></div>
+          <div><Link className="link" to="/reviews">Reviews</Link></div>
         )
     }
 };

@@ -3,6 +3,7 @@
 }
 
 .bodydiv {
+  z-index: 5;
   min-height: 80vw;
   display: flex;
   justify-content: center;
@@ -11,13 +12,29 @@
   flex-flow: column nowrap;
 }
 
+.link {
+  text-decoration: none;
+  color: #7ba547;
+  font-size: 20px;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 p {
+  color: white;
+  z-index: 5;
   margin-top: 20px;
   font-size: 30px;
   font-weight: bold;
 }
 
 .titlediv {
+  z-index: 5;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -25,10 +42,12 @@ p {
 }
 
 .logo {
+  z-index: 5;
   width: 65vw;
 }
 
 button {
+  z-index: 5;
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
@@ -43,6 +62,7 @@ button {
 }
 
 button:hover {
+  z-index: 5;
   outline: none;
   font-size: 18px;
   font-weight: bold;
@@ -58,6 +78,46 @@ button:hover {
 
 .buttondiv {
   display: flex;
+  flex-direction: row;
+  z-index: 5;
+  display: flex;
   justify-content: space-around;
   width: 500px;
+}
+
+.background {
+  z-index: -6;
+}
+
+/*.container2 {
+  filter: hue-rotate(40deg);
+  margin-top: -70vh;
+  z-index: 500;
+  width: 100vw;
+  height: 100vw;
+  min-height: 1000px;
+  min-width: 1000px;
+  background: -webkit-linear-gradient(-45deg, #2c3772 0%,#36468c 12%,#4b81aa 25%,#2b4277 39%,#1a2947 50%,#000000 54%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+}*/
+
+
+
+.container1 {
+  filter: grayscale() brightness(25%);
+  z-index: -5;
+  margin-top: -70vh;
+  width: 100vw;
+  height: 100vw;
+  min-height: 1000px;
+  min-width: 1000px;
+  display: flex;
+  flex-flow: row wrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.container1:before {
+   background-color: rgba(255,0,0,0.5);
 }
