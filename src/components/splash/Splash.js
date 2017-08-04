@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
 // import children
-// import SplashButtons from './SplashButtons.js';
+import SplashButtonTwo from './SplashButtonTwo.js';
+import SplashButtonOne from './SplashButtonOne.js';
+import Background from './Background.js';
+import "./Splash.css";
 
-export default class Splash extends Component {
+
+class Splash extends Component {
+  constructor() {
+    super();
+
+}
 
     render() {
         return (
-            <div>
-                <h1>BLAMO! THIS IS THE SPASH!</h1>
-                <p>Yeah, it's true. And this is a very conscise description of what we're selling</p>
+            <div className="bodydiv">
+              <div className="titlediv">
+                <img className="logo" alt="logo" src={"logo2.png"}/>
+                <p>The New You is Ready</p>
+              </div>
+              <div className="buttondiv">
+                <SplashButtonOne />
+                <SplashButtonTwo />
+              </div>
+            <Background />
             </div>
         )
     }
 }
+
+export default Splash;

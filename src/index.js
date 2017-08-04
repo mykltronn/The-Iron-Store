@@ -9,12 +9,11 @@ import Checkout from './components/checkout/Checkout.js';
 import Reviews from './components/reviews/Reviews.js';
 import Admin from './components/admin/Admin.js';
 // remove for production v v
-import TempHeader from './TempHeader.js';
+//import TempHeader from './TempHeader.js';
 
 
 ReactDOM.render(
     <BrowserRouter>
-        <TempHeader>
             <Switch>
                 <Route exact path="/" component={Splash} />
                 <Route path="/shop" component={Shop} />
@@ -22,6 +21,5 @@ ReactDOM.render(
                 <Route path="/reviews" component={Reviews} />
                 <Route path="/admin" component={Admin} />
             </Switch>
-        </TempHeader>
     </BrowserRouter>
     , document.getElementById('root'));

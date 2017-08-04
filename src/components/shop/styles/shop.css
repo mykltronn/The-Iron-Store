@@ -1,48 +1,108 @@
-/*.carousel-box {
-    width: 800px;
-    height: 400px;
-    background-color: pink;
-    margin-top: 100px;
-}
+ /*style variables */
+ :root {
+   --shop-border: 3px solid black;
+   --shop-b-rad: 5px;
+ }
 
-.carousel-item {
-    margin: 180px;
-}
-
-.form {
-    margin: -80px 0px 0px 20px;
-}
-
-.fa {
-    font-size: 80px;
-}*/
+ /*main page*/
 
 .product-card {
     display: flex;
     flex-direction: row;
 }
 
+/*==================== v v cart styles v v ==================*/
+
 .cart {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: black;
-    color: white;
+    color: black;
     width: 100%;
-    height: 100px;
+    height: 150px;
+    border: var(--shop-border);
+    border-radius: var(--shop-b-rad);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.options-carousel {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    background-color: black;
-    color: white;
-    width: 800px;
+.cart-image {
+    width: ;
+    height: 100%;
+}
+
+.cart-options-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70vw;
+}
+
+.cart-options-ul li {
+    list-style: none;
+    display: inline-block;
+}
+/*=================== ^ ^ cart styles ^ ^ ===================*/
+/*=================== v v slider styles v v =====================*/
+/*.pagination {
+  margin: 20px;
+  text-align: center;
+}
+.pager {
+  background-color: grey;
+  display: inline-block;
+  height: 15px; width: 15px;
+  border-radius: 50%;
+  margin: 10px;
+  overflow: hidden;
+  text-indent: -9000px;
+  white-space: nowrap;
+}
+*/
+
+.slider {
     height: 400px;
+    width: 80vw;
+    position: absolute;
+    margin-top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: var(--shop-border);
+    border-radius: var(--shop-b-rad);
 }
 
-.vert-space {
-    height: 800px;
+.slides {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.slide--active {
+  display: block;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.toggle {
+  background: blue;
+  color: white;
+  display: block;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+}
+
+.toggle-prev {
+  left: 0;
+}
+
+.toggle--next {
+  right: 0;
 }
