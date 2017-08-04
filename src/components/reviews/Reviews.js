@@ -7,7 +7,6 @@ import './Reviews.css';
 // import children
 import  ReviewCard  from './ReviewCard.js';
 
-
 export default class Reviews extends Component {
    constructor() {
       super()
