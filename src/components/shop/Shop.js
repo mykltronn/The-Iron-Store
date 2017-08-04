@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 // import styles
 import './styles/shop.css'
-// import data
-import { NuUData } from '../../data/NuUData.js'
 // import children
 import ProductCard from './ProductCard.js';
 import OptionSlider from './slider/OptionSlider.js'
@@ -17,13 +15,26 @@ export default class Shop extends Component {
 
         this.state = {
             selectedU: null,
+            NuUData: []
         }
     }
 
+    componentWillMount() {
+        let url = "https://intense-river-24910.herokuapp.com/api/products"
+        fetch(url).then(resp => resp.json())
+            .then(resp => {
+                this.setState({ NuUData: resp })
+            })
+    }
+
     handleClick(event) {
-        for(let i=0; i < NuUData.results.length; i++){
-            if(event.target.id == NuUData.results[i].id) {
-                this.setState({ selectedU: NuUData.results[i] })
+        console.log("handleClick fires");
+        console.log(event.target.id);
+        let NuUData = this.state.NuUData
+        for(let i=0; i < NuUData.length; i++){
+            console.log(NuUData[i]._id);
+            if(event.target.id == NuUData[i]._id) {
+                this.setState({ selectedU: NuUData[i] })
             }
         }
     }
@@ -38,8 +49,8 @@ export default class Shop extends Component {
                 </div>
             )
         }
-        let productCard = NuUData.results.map((NuU) => {
-            return <ProductCard key={NuU.id} NuU={NuU} handleClick={this.handleClick}/>
+        let productCard = this.state.NuUData.map((NuU) => {
+            return <ProductCard key={NuU._id} NuU={NuU} handleClick={this.handleClick}/>
             })
 
         return (

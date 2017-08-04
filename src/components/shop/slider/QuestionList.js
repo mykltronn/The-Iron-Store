@@ -1,6 +1,6 @@
 export const questions = [
   {
-    id: "slide1",
+    id: "q1",
     title: "Question 1",
     label: "How many friends?",
     options: [
@@ -10,9 +10,9 @@ export const questions = [
     action: "Slide 1 Image Action"
   },
   {
-    id: "slide2",
+    id: "q2",
     title: "Question 2",
-    label: "How many whatevers?",
+    label: "How many likes?",
     options: [
         "Q2 Opt 1",
         "Q2 Opt 2",
@@ -23,9 +23,9 @@ export const questions = [
     action: "Slide 2 Image Action"
   },
   {
-    id: "slide3",
+    id: "q3",
     title: "Question 3",
-    label: "Also something else?",
+    label: "How many comments?",
     options: [
         "Q3 Opt 1",
         "Q3 Opt 2",
