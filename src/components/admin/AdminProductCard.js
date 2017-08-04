@@ -1,7 +1,7 @@
 
 //Comment.js
 import React, { Component } from 'react';
-import marked from 'marked';
+//import marked from 'marked';
 
 class AdminProductCard extends Component {
   constructor(props) {
@@ -107,10 +107,10 @@ class AdminProductCard extends Component {
     this.setState({ friends: e.target.value })
   }
 
- rawMarkup() {
-   let rawMarkup = marked(this.props.children.toString());
-   return { __html: rawMarkup };
- }
+ // rawMarkup() {
+ //   let rawMarkup = marked(this.props.children.toString());
+ //   return { __html: rawMarkup };
+ // }
  render() {
    return (
      <div>
