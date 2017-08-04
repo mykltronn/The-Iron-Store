@@ -10,48 +10,35 @@ export default class OptionsSlider extends Component {
         super(props)
 
         this.getOptions = this.getOptions.bind(this)
+
         this.state= {
             currentSlide: 0,
-            likes   : '',
-            friends : '',
-            comments: '',
-            posts   : '',
-            lPrice  : '',
-            fPrice  : '',
-            cPrice  : '',
-            pPrice  : ''
+            likes: '',
+            friends: '',
+            comments: ''
         }
-    }
-
-    componentWillMount() {
-        //fetch to the options uri
     }
 
     changeSlide(slide) {
         this.setState({ currentSlide: slide })
     }
 
-    getOptions(question, answer, price) {
-        console.log(question + " and also " + price);
-        if (question === questions[0].id) {
-            this.setState({ friends: answer, fPrice: price })
-
+    getOptions(question, answer) {
+        if (question === 'How many likes?') {
+            this.setState({ likes: answer })
         }
-        if (question === questions[1].id) {
-            this.setState({ likes: answer, lPrice: price})
+        if (question === 'How many friends?') {
+            this.setState({ friends: answer})
         }
-        if (question === questions[2].id) {
-            this.setState({ comments: answer, cPrice: price })
-        }
-        if (question === questions[3].id) {
-            this.setState({ posts: answer, pPrice: price })
+        if (question === 'How many comments?') {
+            this.setState({ comments: answer })
         }
     }
 
     render() {
         return (
             <div className="cart-slider">
-                <Cart selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
+                <Cart selectedU={this.props.selectedU} likes={this.state.likes} friends={this.state.friends} comments={this.state.comments}/>
                 <div className="slider">
                     <Slides data={questions} slide={this.state.currentSlide} getOptions={this.getOptions}/>
                     {/* <Pagination data={questions} /> */}
