@@ -11,7 +11,6 @@ import Admin from './components/admin/Admin.js';
 // remove for production v v
 //import TempHeader from './TempHeader.js';
 
-
 ReactDOM.render(
     <BrowserRouter>
             <Switch>
