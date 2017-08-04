@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
+import Cart from '../shop/Cart';
 export default class UserSelection extends Component {
 
     render() {
+
         return (
             <div className="card">
-              {/* will need to add the path to get the image from the database that bob made. Also will need to dynamically grab the title of whatever the selection was. */}
+              <Cart friends={this.props.friends} />
               <img class="card-img-top" src="" alt="" />
                 <div className="card-block">
                   <p className="card-text">
