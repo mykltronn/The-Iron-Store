@@ -1,36 +1,44 @@
 export const questions = [
-  {
-    id: "q1",
-    title: "Question 1",
-    label: "How many friends?",
-    options: [
-        "Q1 Opt 1",
-        "Q1 Opt 2"
-    ],
-    action: "Slide 1 Image Action"
-  },
-  {
-    id: "q2",
-    title: "Question 2",
-    label: "How many likes?",
-    options: [
-        "Q2 Opt 1",
-        "Q2 Opt 2",
-        "Q2 Opt 3",
-        "Q2 Opt 4",
-        "Q2 Opt 5"
-    ],
-    action: "Slide 2 Image Action"
-  },
-  {
-    id: "q3",
-    title: "Question 3",
-    label: "How many comments?",
-    options: [
-        "Q3 Opt 1",
-        "Q3 Opt 2",
-        "Q3 Opt 3"
-    ],
-    action: "Slide 3 Image Action"
-  },
-];
+    {
+        id: "q1",
+        label: "How many friends do Ü have?",
+        options: [
+            { option: "80", price: "10.00"},
+            { option: "150", price: "15.00"},
+            { option: "300", price: "25.00"},
+            { option: "600", price: "45.00"},
+            { option: "1000", price: "70.00"}
+        ]
+    },
+    {
+        id: "q2",
+        label: "How many likes do Ür posts recieve?",
+        options: [
+            { option: "10-20", price: "10.00"},
+            { option: "20-50", price: "15.00"},
+            { option: "50-100", price: "25.00"},
+            { option: "100-200", price: "40.00"},
+            { option: "200-500", price: "60.00"}
+        ]
+    },
+    {
+        id: "q3",
+        label: "How many comments do Ür posts recieve?",
+        options: [
+            { option: "1-5", price: "0.00"},
+            { option: "5-10", price: "10.00"},
+            { option: "10-20", price: "20.00"},
+            { option: "20-30", price: "30.00"}
+        ]
+    },
+    {
+        id: "q4",
+        label: "How many posts per day?",
+        options: [
+            { option: "1-5", price: "0.00"},
+            { option: "5-10", price: "10.00"},
+            { option: "10-20", price: "20.00"},
+            { option: "20-30", price: "30.00"}
+        ]
+    }
+]
