@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+//<<<<<<< HEAD
 // 3
 // import React, { Component } from 'react';
 //
@@ -83,7 +83,7 @@
 // // export default ReviewCard;
 //
 // // ★
-=======
+//=======
 
 import React, { Component } from 'react';
 
@@ -116,4 +116,4 @@ export default class ReviewCard extends Component {
         )
     }
 }
->>>>>>> bb45e47c3d23123ee0b4b7e0b8b5aa470d7ad65b
+//>>>>>>> bb45e47c3d23123ee0b4b7e0b8b5aa470d7ad65b
