@@ -59,8 +59,8 @@ class AdminBox extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Product List</h2>
+      <div className="adminDiv">
+        <h2 className="adminH2">Product List</h2>
         <AdminProductList
           onProductDelete = {this.handleProductDelete}
           onProductUpdate = {this.handleProductUpdate}

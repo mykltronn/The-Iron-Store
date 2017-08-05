@@ -114,26 +114,26 @@ class AdminProductCard extends Component {
  render() {
    return (
      <div>
-         <a href="#" onClick={this.updateProduct}>update</a>
-         <a href="#" onClick={this.deleteProduct}>delete</a>
-         {(this.state.toBeUpdated) ? (<form onSubmit={this.handleProductUpdate}>
-           <input type="text" placeholder="Update Title" value={this.state.title} onChange={this.handleTitleChange}/>
+         <a className="adminAnchor" href="#" onClick={this.updateProduct}>update</a>
+         <a className="adminAnchor" href="#" onClick={this.deleteProduct}>delete</a>
+         {(this.state.toBeUpdated) ? (<form className="adminForm" onSubmit={this.handleProductUpdate}>
+           <input className="adminForm" type="text" placeholder="Update Title" value={this.state.title} onChange={this.handleTitleChange}/>
 
-           <input type="text" placeholder="Update your description..." value={this.state.description} onChange={this.handleDescriptionChange}/>
+           <input className="adminInput" className="adminInput" type="text" placeholder="Update your description..." value={this.state.description} onChange={this.handleDescriptionChange}/>
 
-           <input type="text" placeholder="Update your package contents..." value={this.state.package_contents} onChange={this.handlePackageContentsChange}/>
+           <input className="adminInput" type="text" placeholder="Update your package contents..." value={this.state.package_contents} onChange={this.handlePackageContentsChange}/>
 
-           <input type="text" placeholder="Update your Image..." value={this.state.image_url} onChange={this.handleImageChange}/>
+           <input className="adminInput" type="text" placeholder="Update your Image..." value={this.state.image_url} onChange={this.handleImageChange}/>
 
-           <input type="text" placeholder="Update your price..." value={this.state.price} onChange={this.handlePriceChange}/>
+           <input className="adminInput" type="text" placeholder="Update your price..." value={this.state.price} onChange={this.handlePriceChange}/>
 
-           <input type="text" placeholder="Update your likes..." value={this.state.likes} onChange={this.handleLikesChange}/>
+           <input className="adminInput" type="text" placeholder="Update your likes..." value={this.state.likes} onChange={this.handleLikesChange}/>
 
-           <input type="text" placeholder="Update your posts..." value={this.state.posts} onChange={this.handlePostsChange}/>
+           <input className="adminInput" type="text" placeholder="Update your posts..." value={this.state.posts} onChange={this.handlePostsChange}/>
 
-           <input type="text" placeholder="Update your friends..." value={this.state.friends} onChange={this.handleFriendsChange}/>
+           <input className="adminInput" type="text" placeholder="Update your friends..." value={this.state.friends} onChange={this.handleFriendsChange}/>
 
-           <input type="submit" value='Update'/>
+           <input className="adminInput" type="submit" value='Update'/>
          </form>) : null}
      </div>
    )
