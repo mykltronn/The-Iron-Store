@@ -6,23 +6,17 @@ export default class Slides extends Component {
     // slides will need to fetch from the options list endpoint, chage line 8 and 16
     render() {
         let slides;
+        let current = this.props.slide
         let qqLength = this.props.data.length
+        let checkout = false;
+        if (current === qqLength-1) { checkout = true}
 
-        if ((this.props.slide + 1) > (qqLength)) {
-            slides =  (
-                <span className="checkout-button" onClick={this.props.checkOut}>checkout</span>
-            )
-        }
-        else {
-            let current = this.props.slide
-            slides = this.props.data.map((slide, index) => {
-                let isActive = current == index;
-                return (
-                    <Slide getOption={this.props.getOptions} active={isActive} key={slide.id} ident={slide.id} label={slide.label} options={slide.options} />
-                )
-            })
-        }
+        slides = this.props.data.map((slide, index) => {
+            let isActive = current == index;
+            return (
+                <Slide getOption={this.props.getOptions} active={isActive} ident={slide.id} key={slide.id} label={slide.label} options={slide.options} checkout={checkout}/>
 
+            )})
         return (
             <div className="slides">
                 {slides}

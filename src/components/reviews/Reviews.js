@@ -1,12 +1,10 @@
 // reviews.js
 import React, { Component } from 'react';
-
+import ReviewCard from './ReviewCard.js';
 // import styles
 import './Reviews.css';
 
 // import children
-import  ReviewCard  from './ReviewCard.js';
-
 export default class Reviews extends Component {
    constructor() {
       super()
@@ -21,24 +19,11 @@ export default class Reviews extends Component {
   }
 
   componentDidMount() {
-    fetch("https://intense-river-24910.herokuapp.com/api/products")
+    fetch("https://intense-river-24910.herokuapp.com/api/product-reviews")
     .then(resp => resp.json())
       .then(resp => {
-        let tempArray = [];
-        let response = resp;
-        for(let i = 0; i < response.length; i++) {
-          for(let n = 0; n < response[i].reviews.length; n++) {
-            let review = {
-              name: response[i].reviews[n].name,
-              _id: response[i].reviews[n]._id,
-              rating: response[i].reviews[n].rating,
-              review: response[i].reviews[n].review,
-              parent_id: response[i]._id
-            }
-            tempArray.push(review);
-          }
-        }
-        let reviewCards = tempArray.map((review)=> {
+        console.log(resp);
+        let reviewCards = resp.results.Reviews.map((review)=> {
           return(
              <ReviewCard key={review._id} data={review} />
           )
@@ -50,9 +35,16 @@ export default class Reviews extends Component {
    render() {
      return (
         <div>
-          <h1>This is the Reviews Page!</h1>
-          {this.state.reviews}
+          <div className="page-body">
+              <div className="header-container">
+                <h3>Read what our customers have to say...</h3>
+                <h1>or let the stars speak for themselves</h1>
+              </div>
+              <div className="review-cards-container">
+                {this.state.reviews}
+              </div>
+            </div>
         </div>
      )
    }
-}
+};

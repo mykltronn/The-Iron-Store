@@ -7,9 +7,9 @@ export default class Slide extends Component {
     }
 
     render() {
-
+        console.log(this.props.checkout);
         return (
-            <div className={"slide" + ((this.props.active === true) ? ' slide--active' : '')}>
+            <div className={"slide" + (this.props.active ? ' slide--active' : '')}>
                 <form>
                     <label className="option-label">{this.props.label}</label>
                     {this.props.options.map(option => {
@@ -21,6 +21,7 @@ export default class Slide extends Component {
                             </div>
                         )
                     })}
+                    <span className={"checkout-button" + (this.props.checkout ? ' checkout-button--active' : '')} onClick={this.props.checkOut} >checkout</span>
                 </form>
             </div>
         );
