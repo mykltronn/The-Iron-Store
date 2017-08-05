@@ -6,10 +6,10 @@ class AdminProductList extends Component {
  render() {
    let productNodes = this.props.data.map(product => {
      return (
-       <div>
-         <h4>{product.title}</h4>
-         <img src={product.image_url} />
-         <p>{product.description}</p>
+       <div className="adminDiv">
+         <h4 className="adminH4">{product.title}</h4>
+         <img className="adminImg" src={product.image_url} />
+         <p className="adminP">{product.description}</p>
          <AdminProductCard key={ product.id }
            uniqueID={product._id}
            onProductDelete={this.props.onProductDelete}

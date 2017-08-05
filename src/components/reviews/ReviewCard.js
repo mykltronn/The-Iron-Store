@@ -23,8 +23,6 @@ export default class ReviewCard extends Component {
              <li className="names">{this.props.data.name}</li>
              <li className="packages"> nu and improved:<b>{this.props.data.package.title}</b></li>
              <li className="reviews">"{this.props.data.review}"</li>
-
-             <li><hr></hr></li>
            </ul>
         )
     }

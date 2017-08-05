@@ -82,24 +82,24 @@ class AdminNuUForm extends Component {
 
  render() {
    return (
-     <form method="POST" action="https://intense-river-24910.herokuapp.com/api/products" >
+     <form className="adminForm" method="POST" action="https://intense-river-24910.herokuapp.com/api/products" >
        <input type='text' placeholder='Title' value={ this.state.title } onChange={ this.handleTitleChange } />
 
-        <input type='text' placeholder='Description' value={ this.state.description } onChange={ this.handleDescriptionChange } />
+        <input className="adminInput" type='text' placeholder='Description' value={ this.state.description } onChange={ this.handleDescriptionChange } />
 
-        <input type='text' placeholder='Package Contents' value={ this.state.package_contents } onChange={ this.handlePackageContentsChange } />
+        <input className="adminInput" type='text' placeholder='Package Contents' value={ this.state.package_contents } onChange={ this.handlePackageContentsChange } />
 
-        <input type='text' placeholder='Image URL' value={ this.state.image_url } onChange={ this.handleImageChange } />
+        <input className="adminInput" type='text' placeholder='Image URL' value={ this.state.image_url } onChange={ this.handleImageChange } />
 
-        <input type='text' placeholder='Price' value={ this.state.price } onChange={ this.handlePriceChange } />
+        <input className="adminInput" type='text' placeholder='Price' value={ this.state.price } onChange={ this.handlePriceChange } />
 
-        <input type='text' placeholder='Likes' value={ this.state.likes } onChange={ this.handleLikesChange } />
+        <input className="adminInput" type='text' placeholder='Likes' value={ this.state.likes } onChange={ this.handleLikesChange } />
 
-        <input type='text' placeholder='Posts' value={ this.state.posts } onChange={ this.handlePostsChange } />
+        <input className="adminInput" type='text' placeholder='Posts' value={ this.state.posts } onChange={ this.handlePostsChange } />
 
-        <input type='text' placeholder='Friends' value={ this.state.friends } onChange={ this.handleFriendsChange } />
+        <input className="adminInput" type='text' placeholder='Friends' value={ this.state.friends } onChange={ this.handleFriendsChange } />
 
-        <input
+        <input className="adminSubmit"
            type = 'submit'
            value = 'Post'/>
          </form>

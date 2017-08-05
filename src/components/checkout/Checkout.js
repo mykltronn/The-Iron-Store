@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import './styles/checkout.css';
 // import children
 import UserSelection from './UserSelection.js';
-// import CheckoutButton from './CheckoutButton.js';
-// import Subtotal from './Subtotal.js';
-// import Receipt from './Receipt.js';
+import CheckoutButton from './CheckoutButton.js';
+import Subtotal from './Subtotal.js';
+import Receipt from './Receipt.js';
+import Cart from '../shop/Cart.js';
 
 export default class Checkout extends Component {
-
+  constructor(props){
+      super(props)
+    }
     render() {
         return (
             <div>
@@ -23,6 +26,9 @@ export default class Checkout extends Component {
                     <li>{this.props.pPrice}</li>
                 </ul>
                 <UserSelection />
+                <Subtotal />
+                <Receipt />
+                <CheckoutButton />
             </div>
         )
     }
