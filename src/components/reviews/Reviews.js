@@ -11,10 +11,6 @@ export default class Reviews extends Component {
 
       this.state = {
          reviews: [],
-         // NOTE: keep -VVV- for add review option.
-         // name: '',
-         // rating: 0,
-         // review: ''
       }
   }
 
@@ -35,15 +31,13 @@ export default class Reviews extends Component {
    render() {
      return (
         <div>
-          <div className="page-body">
               <div className="header-container">
-                <h3>Read what our customers have to say...</h3>
+                <h4>Read what our customers have to say...</h4>
                 <h1>or let the stars speak for themselves</h1>
               </div>
               <div className="review-cards-container">
                 {this.state.reviews}
               </div>
-            </div>
         </div>
      )
    }
