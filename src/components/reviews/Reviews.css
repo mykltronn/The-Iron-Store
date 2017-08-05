@@ -5,6 +5,7 @@
 
 h1 {
   text-align: center;
+  /*font-family: 'Nova Square', sans-serif;*/
 }
 
 .review-cards-container {
@@ -45,9 +46,9 @@ h1 {
   font-size: 25px;
   color: #65CBE3;
   margin-bottom: 10px;
-  -webkit-box-shadow:0 2px -5px rgba(0,0,0,0.4);
-  -moz-box-shadow:0 2px -5px rgba(0,0,0,0.4);
-  box-shadow:0 2px -5px rgba(0,0,0,0.4);
+  -webkit-box-shadow:0 2px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow:0 2px 5px rgba(0,0,0,0.4);
+  box-shadow:0 2px 5px rgba(0,0,0,0.4);
 }
 
 .names {
