@@ -1,7 +1,7 @@
 export const questions = [
     {
         id: "q1",
-        label: "How many friends do you have?",
+        label: "How many friends do Ü have?",
         options: [
             { option: "80", price: "10.00"},
             { option: "150", price: "15.00"},
@@ -12,7 +12,7 @@ export const questions = [
     },
     {
         id: "q2",
-        label: "How many likes do your posts recieve",
+        label: "How many likes do Ür posts recieve?",
         options: [
             { option: "10-20", price: "10.00"},
             { option: "20-50", price: "15.00"},
@@ -23,7 +23,7 @@ export const questions = [
     },
     {
         id: "q3",
-        label: "How many comments do your posts recieve?",
+        label: "How many comments do Ür posts recieve?",
         options: [
             { option: "1-5", price: "0.00"},
             { option: "5-10", price: "10.00"},

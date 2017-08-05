@@ -28,11 +28,8 @@ export default class Shop extends Component {
     }
 
     handleClick(event) {
-        console.log("handleClick fires");
-        console.log(event.target.id);
         let NuUData = this.state.NuUData
         for(let i=0; i < NuUData.length; i++){
-            console.log(NuUData[i]._id);
             if(event.target.id == NuUData[i]._id) {
                 this.setState({ selectedU: NuUData[i] })
             }

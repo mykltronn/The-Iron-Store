@@ -4,14 +4,17 @@ import Slides from './Slides.js'
 import { Pagination } from './Pagination.js'
 import Controls from './Controls.js'
 import { questions } from './QuestionList.js'
+import Checkout from '../../checkout/Checkout.js'
 
 export default class OptionsSlider extends Component {
     constructor (props) {
         super(props)
 
         this.getOptions = this.getOptions.bind(this)
+        this.checkOut = this.checkOut.bind(this)
         this.state= {
             currentSlide: 0,
+            checkedOut: false,
             likes   : '',
             friends : '',
             comments: '',
@@ -25,6 +28,7 @@ export default class OptionsSlider extends Component {
 
     componentWillMount() {
         //fetch to the options uri
+        // also possibly set setState({ checkedOut: false })
     }
 
     changeSlide(slide) {
@@ -32,7 +36,6 @@ export default class OptionsSlider extends Component {
     }
 
     getOptions(question, answer, price) {
-        console.log(question + " and also " + price);
         if (question === questions[0].id) {
             this.setState({ friends: answer, fPrice: price })
 
@@ -48,12 +51,23 @@ export default class OptionsSlider extends Component {
         }
     }
 
+    checkOut() {
+        this.setState({ checkedOut: true })
+    }
+
     render() {
+        if(this.state.checkedOut) {
+            return(
+                <div>
+                    <Checkout selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
+                </div>
+            )
+        }
         return (
             <div className="cart-slider">
                 <Cart selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
                 <div className="slider">
-                    <Slides data={questions} slide={this.state.currentSlide} getOptions={this.getOptions}/>
+                    <Slides data={questions} slide={this.state.currentSlide} getOptions={this.getOptions} checkOut={this.checkOut}/>
                     {/* <Pagination data={questions} /> */}
                     <Controls data={questions} slide={this.state.currentSlide} changeSlide={this.changeSlide.bind(this)} />
                 </div>
