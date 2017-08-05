@@ -4,6 +4,9 @@
    --shop-b-rad: 5px;
  }
 
+* {
+    box-sizing: border-box;
+}
  /*main page*/
 
 .product-card {
@@ -43,6 +46,8 @@
     list-style: none;
     display: inline-block;
 }
+
+
 /*=================== ^ ^ cart styles ^ ^ ===================*/
 /*=================== v v slider styles v v =====================*/
 /*.pagination {
@@ -105,4 +110,23 @@
 
 .toggle--next {
   right: 0;
+}
+
+.checkout-button {
+    display: none;
+}
+
+.checkout-button.checkout-button--active {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 50px 0px;
+  padding: 10px;
+  border: var(--shop-border);
+  border-radius: var(--shop-b-rad);
+}
+
+.checkout-button--active:hover {
+    background-color: pink;
 }
