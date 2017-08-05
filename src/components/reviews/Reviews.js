@@ -35,18 +35,15 @@ export default class Reviews extends Component {
    render() {
      return (
         <div>
-          <div className="background">
-            <div className="page-body">
+          <div className="page-body">
               <div className="header-container">
                 <h3>Read what our customers have to say...</h3>
                 <h1>or let the stars speak for themselves</h1>
               </div>
-              <div className="testimonials"></div>
               <div className="review-cards-container">
                 {this.state.reviews}
               </div>
             </div>
-          </div>
         </div>
      )
    }

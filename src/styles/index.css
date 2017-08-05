@@ -1,12 +1,28 @@
-body {
+* {
+  font-family: 'Ubuntu', sans-serif;
+  color: #a2a2a2;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+html {
+  background-color: #1b1b1b;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  min-width: 1050px;
+  padding: 2em;
+  margin: 5em;
+  border-radius: 5px;
+  background-color: #2a2a2a;
 }
 
 /*everything between these comments is just for the TempHeader for dev*/
-
-a:hover {
+/*a:hover {
     color: inherit;
 }
 
@@ -32,6 +48,5 @@ nav {
     border: 3px solid #676767;
     border-radius: 5px;
 
-}
-
+}*/
 /* ^ ^ ^ to here... ^ ^ ^ */

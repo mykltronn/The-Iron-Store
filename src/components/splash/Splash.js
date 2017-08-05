@@ -17,7 +17,7 @@ class Splash extends Component {
             <div className="bodydiv">
               <div className="titlediv">
                 <img className="logo" alt="logo" src={"logo2.png"}/>
-                <p>The New You is Ready</p>
+                <p>Don't Do You.... Do <i>NuÜ</i></p>
               </div>
               <div className="buttondiv">
                 <SplashButtonOne />
