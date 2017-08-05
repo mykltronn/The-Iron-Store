@@ -16,7 +16,7 @@ class Splash extends Component {
         return (
             <div className="bodydiv">
               <div className="titlediv">
-                <img className="logo" alt="logo" src={"NuU.png"}/>
+                <img className="logo" alt="logo" src={"NewMotherFuckingLogo.png"}/>
                 <p>The New You is Ready</p>
               </div>
               <div className="buttondiv">
