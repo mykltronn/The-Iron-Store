@@ -23,7 +23,8 @@ export default class Shop extends Component {
         let url = "https://intense-river-24910.herokuapp.com/api/products"
         fetch(url).then(resp => resp.json())
             .then(resp => {
-                this.setState({ NuUData: resp })
+              console.log(resp);
+                this.setState({ NuUData: resp.results})
             })
     }
 
