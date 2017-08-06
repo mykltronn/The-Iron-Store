@@ -1,0 +1,53 @@
+.btn {
+  cursor: pointer;
+  outline: none;
+  color: #a2a2a2;
+  background-color: #1b1b1b;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  filter: brightness(150%) contrast(150%);
+}
+
+.card-text {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.productsThing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  border-color: black;
+  border-width: 4px;
+  border-style: solid;
+  padding: 10px;
+  margin: 5px;
+}
+
+.card-title {
+  margin-top: 25px;
+}
+
+.adminImg {
+  height: 174px;
+  width: 174px;
+}
+
+.ProcutsThingContainer {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.ThisStuff {
+  width: 85vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}

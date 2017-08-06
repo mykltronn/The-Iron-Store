@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AdminBox from './AdminBox.js';
+import TempHeader from '../TempHeader/TempHeader.js'
 
 export default class Admin extends Component {
 constructor() {
@@ -11,7 +12,8 @@ constructor() {
 
 render() {
     return (
-        <div>
+        <div className="stuffs">
+          <TempHeader />
           <h1>Product List</h1>
             <AdminBox />
         </div>

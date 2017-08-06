@@ -2,6 +2,7 @@
 //Comment.js
 import React, { Component } from 'react';
 //import marked from 'marked';
+import './Styles/admin.css'
 
 class AdminProductCard extends Component {
   constructor(props) {
@@ -114,7 +115,7 @@ class AdminProductCard extends Component {
  //added some style changes
  render() {
    return (
-     <div>
+     <div className="productCards">
          <a className="adminAnchor btn btn-primary" href="#" onClick={this.updateProduct}>update</a>
          <a className="adminAnchor btn btn-primary" href="#" onClick={this.deleteProduct}>delete</a>
          {(this.state.toBeUpdated) ? (<form className="adminForm form-group" onSubmit={this.handleProductUpdate}>
