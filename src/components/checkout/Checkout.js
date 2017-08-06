@@ -6,6 +6,7 @@ import CheckoutButton from './CheckoutButton.js';
 import Subtotal from './Subtotal.js';
 import Receipt from './Receipt.js';
 import Cart from '../shop/Cart.js';
+import TempHeader from "../TempHeader/TempHeader.js"
 
 export default class Checkout extends Component {
   constructor(props){
@@ -28,6 +29,7 @@ export default class Checkout extends Component {
           <div>
             {this.state.showReceipt != true ? (
             <div>
+              <TempHeader />
                 <h1 className="checkoutTitle">Checkout gets the following params:</h1>
                 <ul>
                     <li>{this.props.likes}</li>
