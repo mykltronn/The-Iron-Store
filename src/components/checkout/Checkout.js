@@ -61,6 +61,7 @@ export default class Checkout extends Component {
             </div>
           ):(
             <div>
+              <h1 className="checkoutInfo">Your purchase has been completed. Here is your final receipt:</h1>
               <Cart selectedU={this.props.selectedU}
                 likes={this.props.likes}
                 lPrice={this.props.lPrice}

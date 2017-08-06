@@ -1,3 +1,13 @@
 .checkoutTitle {
   text-align: center;
 }
+
+
+.checkoutInfo {
+  margin-top: 150px;
+}
+
+.totalReceipt {
+  font-size: 30px;
+  text-align: center;
+}
