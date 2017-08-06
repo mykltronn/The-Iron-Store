@@ -22,13 +22,19 @@ export default class OptionsSlider extends Component {
             fPrice  : '',
             cPrice  : '',
             pPrice  : '',
-            checkedOut: false
+            checkedOut: false,
+            questions:[]
         }
     }
 
     componentWillMount() {
-        //fetch to the options uri
-        // also possibly set setState({ checkedOut: false })
+        fetch("https://intense-river-24910.herokuapp.com/api/options-labels")
+        .then(resp => resp.json())
+        .then(resp => {
+          let optionAndLabels = resp.results.questions;
+          console.log(optionAndLabels);
+          this.setState({questions: optionAndLabels})
+        })
     }
 
     changeSlide(slide) {
@@ -36,17 +42,17 @@ export default class OptionsSlider extends Component {
     }
 
     getOptions(question, answer, price) {
-        if (question === questions[0].id) {
+        if (question === this.state.questions[0].id) {
             this.setState({ friends: answer, fPrice: price })
 
         }
-        if (question === questions[1].id) {
+        if (question === this.state.questions[1].id) {
             this.setState({ likes: answer, lPrice: price})
         }
-        if (question === questions[2].id) {
+        if (question === this.state.questions[2].id) {
             this.setState({ comments: answer, cPrice: price })
         }
-        if (question === questions[3].id) {
+        if (question === this.state.questions[3].id) {
             this.setState({ posts: answer, pPrice: price })
         }
     }
@@ -67,13 +73,15 @@ export default class OptionsSlider extends Component {
       //   }
         return (
           <div>
+            {this.state.questions.length > 0 ? (
+          <div>
             {this.state.checkedOut != true ? (
               <div className="cart-slider">
                   <Cart selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
                   <div className="slider">
-                      <Slides data={questions} slide={this.state.currentSlide} getOptions={this.getOptions} checkOut={this.checkOut}/>
+                      <Slides data={this.state.questions} slide={this.state.currentSlide} getOptions={this.getOptions} checkOut={this.checkOut}/>
                       {/* <Pagination data={questions} /> */}
-                      <Controls data={questions} slide={this.state.currentSlide} changeSlide={this.changeSlide.bind(this)} />
+                      <Controls data={this.state.questions} slide={this.state.currentSlide} changeSlide={this.changeSlide.bind(this)} />
                   </div>
               </div>
           ) : (
@@ -83,6 +91,13 @@ export default class OptionsSlider extends Component {
           )}
 
           </div>
+
+        ) : (
+          <div>
+            Loading
+          </div>
+          )}
+        </div>
         );
     }
 }
