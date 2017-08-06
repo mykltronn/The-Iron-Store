@@ -10,7 +10,7 @@ export default class ProductCard extends Component {
                 <ul className="product-card-ul" id={NuU._id}>
                     <li className="product-card-title" id={NuU._id}>{NuU.title}</li>
                     <li id={NuU._id}>{NuU.description}</li>
-                    <li id={NuU._id}>{NuU.price}</li>
+                    <li className="priceThing" id={NuU._id}>Base Price: <span className="bluePrice">${NuU.price}.00</span></li>
                 </ul>
             </div>
         )
