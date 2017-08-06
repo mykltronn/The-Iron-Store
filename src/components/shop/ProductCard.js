@@ -6,9 +6,9 @@ export default class ProductCard extends Component {
         let NuU = this.props.NuU
         return (
             <div className="product-card" id={NuU._id} onClick={this.props.handleClick}>
-                <img id={NuU._id} src={NuU.image_url}/>
-                <ul id={NuU._id}>
-                    <li id={NuU._id}>{NuU.title}</li>
+                <img className="product-card-image" id={NuU._id} src={NuU.image_url}/>
+                <ul className="product-card-ul" id={NuU._id}>
+                    <li className="product-card-title" id={NuU._id}>{NuU.title}</li>
                     <li id={NuU._id}>{NuU.description}</li>
                     <li id={NuU._id}>{NuU.price}</li>
                 </ul>
