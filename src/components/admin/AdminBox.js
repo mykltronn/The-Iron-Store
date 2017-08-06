@@ -17,9 +17,11 @@ class AdminBox extends Component {
   }
 
   loadProductsFromServer() {
-    axios.get("https://intense-river-24910.herokuapp.com/api/products")
+    fetch("https://intense-river-24910.herokuapp.com/api/products")
+      .then(res => res.json())
       .then(res => {
-        this.setState({data: res.data});
+        console.log(res.results);
+        this.setState({data: res.results});
     })
   }
 
@@ -36,7 +38,8 @@ class AdminBox extends Component {
   }
 
   handleProductDelete(id) {
-    axios.delete(`${this.props.url}/${id}`)
+    let deleteUrl = 'https://intense-river-24910.herokuapp.com/api/products/' + id;
+    axios.delete(deleteUrl)
     .then(res => {
       console.log('Product deleted');
     })
@@ -46,7 +49,8 @@ class AdminBox extends Component {
   }
 
   handleProductUpdate(id, product) {
-    axios.put(`${this.props.url}/${id}`, product)
+    let updateProductUrl = 'https://intense-river-24910.herokuapp.com/api/products/' + id;
+    axios.put(updateProductUrl, product)
     .catch(err => {
       console.log(err);
     })
