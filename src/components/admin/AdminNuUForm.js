@@ -99,7 +99,7 @@ class AdminNuUForm extends Component {
    this.setState({title: '', description: '', package_contents: '', image_url: '', price: '', likes: '', posts: '', friends: ''});
  }
 
-
+//added some style changes 
  render() {
    return (
     <div className="container">

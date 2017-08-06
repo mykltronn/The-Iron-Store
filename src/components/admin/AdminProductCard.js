@@ -111,6 +111,7 @@ class AdminProductCard extends Component {
  //   let rawMarkup = marked(this.props.children.toString());
  //   return { __html: rawMarkup };
  // }
+ //added some style changes
  render() {
    return (
      <div>
