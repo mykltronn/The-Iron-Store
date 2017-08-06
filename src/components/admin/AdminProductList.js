@@ -4,9 +4,10 @@ import AdminProductCard from './AdminProductCard.js';
 
 class AdminProductList extends Component {
  render() {
-   let productNodes = this.props.data.map(product => {
+   let productNodes = this.props.data.map((product) => {
+
      return (
-       <div className="adminDiv">
+       <div className="adminDiv" key={product._id}>
          <h4 className="adminH4">{product.title}</h4>
          <img className="adminImg" src={product.image_url} />
          <p className="adminP">{product.description}</p>
