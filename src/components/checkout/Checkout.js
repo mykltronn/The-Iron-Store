@@ -9,10 +9,24 @@ import Cart from '../shop/Cart.js';
 
 export default class Checkout extends Component {
   constructor(props){
-      super(props)
+      super(props);
+
+      this.handleCheckoutClick = this.handleCheckoutClick.bind(this);
+      this.state={
+        showReceipt: false
+      }
     }
+
+    handleCheckoutClick() {
+      this.setState({showReceipt: true })
+    }
+
+
     render() {
+      console.log(this.props);
         return (
+          <div>
+            {this.state.showReceipt != true ? (
             <div>
                 <h1 className="checkoutTitle">Checkout gets the following params:</h1>
                 <ul>
@@ -25,11 +39,45 @@ export default class Checkout extends Component {
                     <li>{this.props.posts}</li>
                     <li>{this.props.pPrice}</li>
                 </ul>
-                <UserSelection />
-                <Subtotal />
-                <Receipt />
-                <CheckoutButton />
+                <Cart selectedU={this.props.selectedU}
+                  likes={this.props.likes}
+                  lPrice={this.props.lPrice}
+                  friends={this.props.friends}
+                  fPrice={this.props.fPrice}
+                  comments={this.props.comments}
+                  cPrice={this.props.cPrice}
+                  posts={this.props.posts}
+                  pPrice={this.props.pPrice}
+                />
+                <Subtotal
+                  lPrice={this.props.lPrice}
+                  fPrice={this.props.fPrice}
+                  cPrice={this.props.cPrice}
+                  pPrice={this.props.pPrice}
+                />
+                <input onClick={this.handleCheckoutClick} type="button" value="Checkout"/>
             </div>
+          ):(
+            <div>
+              <Cart selectedU={this.props.selectedU}
+                likes={this.props.likes}
+                lPrice={this.props.lPrice}
+                friends={this.props.friends}
+                fPrice={this.props.fPrice}
+                comments={this.props.comments}
+                cPrice={this.props.cPrice}
+                posts={this.props.posts}
+                pPrice={this.props.pPrice}
+              />
+              <Receipt
+                lPrice={this.props.lPrice}
+                fPrice={this.props.fPrice}
+                cPrice={this.props.cPrice}
+                pPrice={this.props.pPrice} />
+            </div>
+          )}
+
+        </div>
         )
     }
 }

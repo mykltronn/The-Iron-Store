@@ -14,7 +14,6 @@ export default class OptionsSlider extends Component {
         this.checkOut = this.checkOut.bind(this)
         this.state= {
             currentSlide: 0,
-            checkedOut: false,
             likes   : '',
             friends : '',
             comments: '',
@@ -22,7 +21,8 @@ export default class OptionsSlider extends Component {
             lPrice  : '',
             fPrice  : '',
             cPrice  : '',
-            pPrice  : ''
+            pPrice  : '',
+            checkedOut: false
         }
     }
 
@@ -56,22 +56,33 @@ export default class OptionsSlider extends Component {
     }
 
     render() {
-        if(this.state.checkedOut) {
-            return(
-                <div>
-                    <Checkout selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
-                </div>
-            )
-        }
+      // let object = this.state;
+      //   if(this.state.checkedOut) {
+      //     console.log(object);
+      //       return(
+      //           <div>
+      //               <Checkout selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
+      //           </div>
+      //       )
+      //   }
         return (
-            <div className="cart-slider">
-                <Cart selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
-                <div className="slider">
-                    <Slides data={questions} slide={this.state.currentSlide} getOptions={this.getOptions} checkOut={this.checkOut}/>
-                    {/* <Pagination data={questions} /> */}
-                    <Controls data={questions} slide={this.state.currentSlide} changeSlide={this.changeSlide.bind(this)} />
-                </div>
+          <div>
+            {this.state.checkedOut != true ? (
+              <div className="cart-slider">
+                  <Cart selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
+                  <div className="slider">
+                      <Slides data={questions} slide={this.state.currentSlide} getOptions={this.getOptions} checkOut={this.checkOut}/>
+                      {/* <Pagination data={questions} /> */}
+                      <Controls data={questions} slide={this.state.currentSlide} changeSlide={this.changeSlide.bind(this)} />
+                  </div>
+              </div>
+          ) : (
+            <div>
+                <Checkout selectedU={this.props.selectedU} likes={this.state.likes} lPrice={this.state.lPrice} friends={this.state.friends} fPrice={this.state.fPrice} comments={this.state.comments} cPrice={this.state.cPrice} posts={this.state.posts} pPrice={this.state.pPrice}/>
             </div>
+          )}
+
+          </div>
         );
     }
 }
