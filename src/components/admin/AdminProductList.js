@@ -1,14 +1,15 @@
 //CommentList.js
 import React, { Component } from 'react';
 import AdminProductCard from './AdminProductCard.js';
+import './Styles/admin.css'
 
 class AdminProductList extends Component {
  render() {
    let productNodes = this.props.data.map((product) => {
 
      return (
-       <div>
-         <div key={product._id}>
+       <div className="productsThing">
+         <div className="ProcutsThingContainer" key={product._id}>
            <img className="adminImg" src={product.image_url} />
              <h4 className="adminH4 card-title">{product.title}</h4>
              <p className="adminP card-text">{product.description}</p>
@@ -21,7 +22,7 @@ class AdminProductList extends Component {
      )
    })
    return (
-     <div>
+     <div className="ThisStuff">
        {productNodes}
      </div>
    )
