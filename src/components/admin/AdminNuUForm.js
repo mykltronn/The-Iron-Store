@@ -99,57 +99,57 @@ class AdminNuUForm extends Component {
    this.setState({title: '', description: '', package_contents: '', image_url: '', price: '', likes: '', posts: '', friends: ''});
  }
 
-//added some style changes 
+//added some style changes
  render() {
    return (
     <div className="container">
      <form onSubmit={this.handleSubmit} className="form-horizontal" >
        <div className="form-group">
          <label className="col-sm-2 control-label">Title</label>
-         <div className="form-group-lg col-sm-10">
+         <div className="form-group-lg col-sm-12">
            <input type='text' className="form-control" placeholder='Title' value={ this.state.title } onChange={ this.handleTitleChange } />
          </div>
 
           <label className="col-sm-2 control-label">Description</label>
-          <div className="col-sm-10">
-            <textarea className="adminInput form-control" rows="3" type='text' placeholder='Description' value={ this.state.description } onChange={ this.handleDescriptionChange } />
+          <div className="col-sm-12">
+            <input className="adminInput form-control" rows="3" type='text' placeholder='Description' value={ this.state.description } onChange={ this.handleDescriptionChange } />
           </div>
 
           <label className="col-sm-2 control-label">Package Contents</label>
-          <div className="col-sm-10">
+          <div className="col-sm-12">
             <input className="adminInput form-control" type='text' placeholder='Package Contents' value={ this.state.package_contents } onChange={ this.handlePackageContentsChange } />
           </div>
 
           <label className="col-sm-2 control-label">Image Url</label>
-          <div className="col-sm-10">
+          <div className="col-sm-12">
             <input className="adminInput form-control" type='text' placeholder='Image URL' value={ this.state.image_url } onChange={ this.handleImageChange } />
           </div>
 
-          <label className="col-sm-2 control-label">Price</label>
-          <div className="col-sm-2">
-            <input className="adminInput form-control" type='text' placeholder='Price' value={ this.state.price } onChange={ this.handlePriceChange } />
-          </div>
+            <label className="col-sm-3 control-label">Price</label>
+            <div className="col-sm-4">
+              <input className="adminInput form-control" type='text' placeholder='Price' value={ this.state.price } onChange={ this.handlePriceChange } />
+            </div>
 
-          <label className="col-sm-2 control-label">Likes</label>
-          <div className="col-sm-2">
-            <input className="adminInput form-control" type='text' placeholder='Likes' value={ this.state.likes } onChange={ this.handleLikesChange } />
-          </div>
+            <label className="col-sm-3 control-label">Likes</label>
+            <div className="col-sm-4">
+              <input className="adminInput form-control" type='text' placeholder='Likes' value={ this.state.likes } onChange={ this.handleLikesChange } />
+            </div>
 
-          <label className="col-sm-2 control-label">Posts</label>
-          <div className="col-sm-2">
-            <input className="adminInput form-control" type='text' placeholder='Posts' value={ this.state.posts } onChange={ this.handlePostsChange } />
-          </div>
+            <label className="col-sm-3 control-label">Posts</label>
+            <div className="col-sm-4">
+              <input className="adminInput form-control" type='text' placeholder='Posts' value={ this.state.posts } onChange={ this.handlePostsChange } />
+            </div>
 
-          <label className="col-sm-2 control-label">Friends</label>
-          <div className="col-sm-2">
-            <input className="adminInput form-control" type='text' placeholder='Friends' value={ this.state.friends } onChange={ this.handleFriendsChange } />
-          </div>
-          <button className="adminSubmit btn btn-primary btn-lg btn-block"
+            <label className="col-sm-3 control-label">Friends</label>
+            <div className="col-sm-4">
+              <input className="adminInput form-control" type='text' placeholder='Friends' value={ this.state.friends } onChange={ this.handleFriendsChange } />
+            </div>
+          <input className="adminSubmit btn btn-primary btn-lg"
              type = 'submit'
-             value = 'Post'>Post NuÜ</button>
+             value = 'Post' />
         </div>
       </form>
-      </div>
+    </div>
        )
      }
 }
