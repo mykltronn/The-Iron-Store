@@ -4,6 +4,7 @@ import './styles/shop.css'
 // import children
 import ProductCard from './ProductCard.js';
 import OptionSlider from './slider/OptionSlider.js'
+import TempHeader from '../TempHeader/TempHeader.js'
 
 
 
@@ -52,7 +53,8 @@ export default class Shop extends Component {
             })
 
         return (
-          <div>
+          <div className="shop-body-wrapper">
+            <TempHeader />
           <div className="shop-title">Make your selection from these options</div>
             <div className="shop-component">
                 {productCard}
