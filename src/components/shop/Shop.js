@@ -52,8 +52,11 @@ export default class Shop extends Component {
             })
 
         return (
+          <div>
+          <div className="shop-title">Make your selection from these options</div>
             <div className="shop-component">
                 {productCard}
+            </div>
             </div>
 
         )

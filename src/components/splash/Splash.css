@@ -1,6 +1,12 @@
+
 *{
   font-family: 'Ubuntu', sans-serif;
   -webkit-transition:all .25s ease;
+}
+
+body {
+  padding: 10vh 0vw;
+  margin: 10vh;
 }
 
 .bodydiv {
@@ -90,19 +96,6 @@ button:hover {
   z-index: -6;
 }
 
-/*.container2 {
-  filter: hue-rotate(40deg);
-  margin-top: -70vh;
-  z-index: 500;
-  width: 100vw;
-  height: 100vw;
-  min-height: 1000px;
-  min-width: 1000px;
-  background: -webkit-linear-gradient(-45deg, #2c3772 0%,#36468c 12%,#4b81aa 25%,#2b4277 39%,#1a2947 50%,#000000 54%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
-}*/
-
-
-
 .container1 {
   filter: grayscale() brightness(25%);
   z-index: -5;
@@ -117,8 +110,4 @@ button:hover {
   overflow-y: hidden;
   justify-content: center;
   align-items: center;
-}
-
-.container1:before {
-   background-color: rgba(255,0,0,0.5);
 }
