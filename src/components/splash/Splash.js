@@ -19,7 +19,7 @@ class Splash extends Component {
 
                 <img className="logo" alt="logo" src={"NewMotherFuckingLogo.png"}/>
 
-                <p>The New You is Ready</p>
+                <p>Don't do you...Do Nu.</p>
 
               </div>
               <div className="buttondiv">
@@ -27,7 +27,7 @@ class Splash extends Component {
                 <SplashButtonTwo />
               </div>
             <Background />
-            </div>
+          </div>
         )
     }
 }

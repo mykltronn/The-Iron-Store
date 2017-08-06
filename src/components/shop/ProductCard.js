@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import TempHeader from '../TempHeader/TempHeader.js'
 export default class ProductCard extends Component {
 
     render() {
