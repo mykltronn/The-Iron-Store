@@ -16,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
 }
 
 .link {
@@ -43,9 +43,11 @@ p {
 .titlediv {
   z-index: 5;
   display: flex;
-  flex-flow: column nowrap;
+  text-align: center;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 .logo {
@@ -86,6 +88,7 @@ button:hover {
 .buttondiv {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   z-index: 5;
   display: flex;
   justify-content: space-around;
@@ -98,16 +101,42 @@ button:hover {
 
 .container1 {
   filter: grayscale() brightness(25%);
-  z-index: -5;
-  margin-top: -70vh;
-  width: 100vw;
-  height: 100vw;
-  min-height: 1000px;
-  min-width: 1000px;
+  z-index: -7;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
   justify-content: center;
   align-items: center;
+}
+
+.container2 {
+  width: 110vw;
+  height: 150vh;
+  margin-top: -700px;
+}
+
+@media only screen and (min-width: 900px) {
+  .bodydiv {
+    margin-top: -20vh;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .buttondiv {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link {
+    font-size: 45px;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }

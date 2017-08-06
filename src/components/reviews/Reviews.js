@@ -1,6 +1,7 @@
 // reviews.js
 import React, { Component } from 'react';
 import ReviewCard from './ReviewCard.js';
+import TempHeader from '../TempHeader/TempHeader.js'
 // import styles
 import './Reviews.css';
 
@@ -31,6 +32,7 @@ export default class Reviews extends Component {
    render() {
      return (
         <div>
+            <TempHeader />
               <div className="header-container">
                 <h4>Read what our customers have to say...</h4>
                 <h1>or let the stars speak for themselves</h1>
