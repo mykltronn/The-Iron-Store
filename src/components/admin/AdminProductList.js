@@ -7,14 +7,16 @@ class AdminProductList extends Component {
    let productNodes = this.props.data.map((product) => {
 
      return (
-       <div className="adminDiv" key={product._id}>
-         <h4 className="adminH4">{product.title}</h4>
-         <img className="adminImg" src={product.image_url} />
-         <p className="adminP">{product.description}</p>
-         <AdminProductCard key={ product.id }
-           uniqueID={product._id}
-           onProductDelete={this.props.onProductDelete}
-           onProductUpdate={this.props.onProductUpdate}/>
+       <div>
+         <div key={product._id}>
+           <img className="adminImg" src={product.image_url} />
+             <h4 className="adminH4 card-title">{product.title}</h4>
+             <p className="adminP card-text">{product.description}</p>
+             <AdminProductCard key={ product.id }
+               uniqueID={product._id}
+               onProductDelete={this.props.onProductDelete}
+               onProductUpdate={this.props.onProductUpdate}/>
+          </div>
        </div>
      )
    })
