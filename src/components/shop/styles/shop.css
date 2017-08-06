@@ -140,6 +140,16 @@
   align-items: center;
 }
 
+.priceThing {
+  margin-top: 10px;
+}
+
+.bluePrice {
+  color: #65CBE3;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
 
 /*=================== ^ ^ cart styles ^ ^ ===================*/
 /*=================== v v slider styles v v =====================*/
