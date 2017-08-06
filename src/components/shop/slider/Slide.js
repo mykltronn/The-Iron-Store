@@ -22,7 +22,7 @@ export default class Slide extends Component {
                             </div>
                         )
                     })}
-                    <span className={"checkout-button" + (this.props.checkout ? ' checkout-button--active' : '')} onClick={this.props.checkOut} ><Link className="toCheckout" to="/checkout">Checkout</Link></span>
+                    <span className={"checkout-button" + (this.props.checkout ? ' checkout-button--active' : '')} onClick={this.props.checkOut} >Checkout</span>
                 </form>
             </div>
         );
