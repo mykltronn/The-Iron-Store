@@ -28,14 +28,11 @@ class AdminBox extends Component {
   handleProductSubmit(product) {
     let products = this.state.data;
     product.id = Date.now();
-    let newProducts = products.push(product);
-    this.setState({data: newProducts})
-    axios.post("https://intense-river-24910.herokuapp.com/api/products", product).then(res => {
-      this.loadProductsFromServer();
-    })
+    let newProducts = products.concat([product]);
+    // this.setState({data: newProducts})
+    axios.post("https://intense-river-24910.herokuapp.com/api/products", product)
     .catch(err =>{
       console.log(err);
-      this.setState({data: product});
     });
   }
 
@@ -54,9 +51,7 @@ class AdminBox extends Component {
 
   handleProductUpdate(id, product) {
     let updateProductUrl = 'https://intense-river-24910.herokuapp.com/api/products/' + id;
-    axios.put(updateProductUrl, product).then(res =>{
-      this.loadProductsFromServer();
-    })
+    axios.put(updateProductUrl, product)
     .catch(err => {
       console.log(err);
     })
@@ -69,8 +64,6 @@ class AdminBox extends Component {
 
   render() {
     return (
-      <div>
-      {this.state.data.length > 0 ? (
       <div className="adminDiv">
         <AdminProductList
           onProductDelete = {this.handleProductDelete}
@@ -80,10 +73,6 @@ class AdminBox extends Component {
         <AdminNuUForm onProductSubmit={this.handleProductSubmit}
           />
       </div>
-    ) : (
-      <div>Loading</div>
-    )}
-    </div>
     )
   }
 }

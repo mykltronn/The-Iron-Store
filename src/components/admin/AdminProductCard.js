@@ -136,7 +136,6 @@ class AdminProductCard extends Component {
            <input className="adminInput form-control" type="text" placeholder="Update your friends..." value={this.state.friends} onChange={this.handleFriendsChange}/>
 
            <input className="adminInput btn" type="submit" value='Update'/>
-           <input className="adminInput btn" type="submit" value="Close" onClick={this.updateProduct}/>
          </form>) : null}
      </div>
    )
