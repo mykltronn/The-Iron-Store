@@ -1,11 +1,11 @@
 // reviews.js
 import React, { Component } from 'react';
 import ReviewCard from './ReviewCard.js';
-import FullLayout from '../navigation/FullLayout.js'
+import TempHeader from '../TempHeader/TempHeader.js'
 // import styles
 import './Reviews.css';
 
-
+// import children
 export default class Reviews extends Component {
    constructor() {
       super()
@@ -31,17 +31,16 @@ export default class Reviews extends Component {
 
    render() {
      return (
-         <FullLayout>
-            <div>
-                  <div className="header-container">
-                    <h4>Read what our customers have to say...</h4>
-                    <h1>or let the stars speak for themselves</h1>
-                  </div>
-                  <div className="review-cards-container">
-                    {this.state.reviews}
-                  </div>
-            </div>
-        </FullLayout>
+        <div>
+            <TempHeader />
+              <div className="header-container">
+                <h4>Read what our customers have to say...</h4>
+                <h1>or let the stars speak for themselves</h1>
+              </div>
+              <div className="review-cards-container">
+                {this.state.reviews}
+              </div>
+        </div>
      )
    }
 };
