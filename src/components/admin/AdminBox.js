@@ -33,7 +33,6 @@ class AdminBox extends Component {
     axios.post("https://intense-river-24910.herokuapp.com/api/products", product)
     .catch(err =>{
       console.log(err);
-      this.setState({data: product});
     });
   }
 
