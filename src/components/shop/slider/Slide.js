@@ -8,7 +8,6 @@ export default class Slide extends Component {
     }
 
     render() {
-        console.log(this.props.checkout);
         return (
             <div className={"slide" + (this.props.active ? ' slide--active' : '')}>
                 <form>
