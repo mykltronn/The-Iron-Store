@@ -28,18 +28,21 @@ export default class Checkout extends Component {
         return (
           <div>
             {this.state.showReceipt != true ? (
-            <div>
+            <div className="checkoutThings">
               <TempHeader />
-                <h1 className="checkoutTitle">Checkout gets the following params:</h1>
-                <ul>
-                    <li>{this.props.likes}</li>
-                    <li>{this.props.lPrice}</li>
-                    <li>{this.props.friends}</li>
-                    <li>{this.props.fPrice}</li>
-                    <li>{this.props.comments}</li>
-                    <li>{this.props.cPrice}</li>
-                    <li>{this.props.posts}</li>
-                    <li>{this.props.pPrice}</li>
+                <h1 className="checkoutTitle">Your selections:</h1>
+                <ul className="selectedItems">
+                    <li>Title: {this.props.selectedU.title} -
+                    ${this.props.selectedU.price}</li>
+
+                    <li>Likes: {this.props.likes} -  ${this.props.lPrice}</li>
+
+                    <li>Friends: {this.props.friends} - ${this.props.fPrice}</li>
+
+                    <li>Comments: {this.props.comments} - ${this.props.cPrice}</li>
+
+                    <li>Posts: {this.props.posts} - ${this.props.pPrice}</li>
+
                 </ul>
                 <Cart selectedU={this.props.selectedU}
                   likes={this.props.likes}
@@ -52,12 +55,13 @@ export default class Checkout extends Component {
                   pPrice={this.props.pPrice}
                 />
                 <Subtotal
+                  selectedU = {this.props.selectedU.price}
                   lPrice={this.props.lPrice}
                   fPrice={this.props.fPrice}
                   cPrice={this.props.cPrice}
                   pPrice={this.props.pPrice}
                 />
-                <input onClick={this.handleCheckoutClick} type="button" value="Checkout"/>
+                <input onClick={this.handleCheckoutClick} className="checkoutBtn" type="button" value="Checkout"/>
             </div>
           ):(
             <div>
@@ -73,6 +77,7 @@ export default class Checkout extends Component {
                 pPrice={this.props.pPrice}
               />
               <Receipt
+                selectedU = {this.props.selectedU.price}
                 lPrice={this.props.lPrice}
                 fPrice={this.props.fPrice}
                 cPrice={this.props.cPrice}
