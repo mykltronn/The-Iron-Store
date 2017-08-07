@@ -113,7 +113,7 @@
     color: black;
     width: 95vw;
     height: 150px;
-    border: var(--shop-border);
+    /*border: var(--shop-border);*/
     border-radius: var(--shop-b-rad);
     display: flex;
     flex-direction: row wrap;
@@ -192,7 +192,7 @@
     margin-top: 200px;
     left: 50%;
     transform: translateX(-50%);
-    border: var(--shop-border);
+    /*border: var(--shop-border);*/
     border-radius: var(--shop-b-rad);
     margin-bottom: 35px;
     background-color: #2a2a2a;
@@ -277,7 +277,7 @@
   transform: translateX(-50%);
   margin: 50px 0px;
   padding: 10px;
-  border: var(--shop-border);
+  /*border: var(--shop-border);*/
   border-radius: var(--shop-b-rad);
   filter: brightness(150%);
 }
