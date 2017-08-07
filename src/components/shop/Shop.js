@@ -53,10 +53,14 @@ export default class Shop extends Component {
             })
 
         return (
+          <div className="shop-body-wrapper">
+            <TempHeader />
+          <div className="shop-title">Make your selection from these options</div>
             <div className="shop-component">
                 <FullLayout>
                 {productCard}
                 </FullLayout>
+            </div>
             </div>
 
         )

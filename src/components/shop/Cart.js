@@ -11,10 +11,18 @@ export default class Cart extends Component {
                 <img className="cart-image" src={U.image_url}/>
                 <h3>{U.title}</h3>
                 <ul className="cart-options-ul">
-                    <li>Friends: {this.props.friends}</li> <span>{this.props.fPrice}</span>
-                    <li>Likes: {this.props.likes}</li> <span>{this.props.lPrice}</span>
-                    <li>Comments: {this.props.comments}</li> <span>{this.props.cPrice}</span>
-                    <li>Posts: {this.props.posts}</li> <span>{this.props.pPrice}</span>
+                  <div className="pricediv">
+                    <li>Friends: {this.props.friends}</li> <span className="bluestuff">{this.props.fPrice}</span>
+                    </div>
+                    <div className="pricediv">
+                    <li>Likes: {this.props.likes}</li> <span className="bluestuff">{this.props.lPrice}</span>
+                    </div>
+                    <div className="pricediv">
+                    <li>Comments: {this.props.comments}</li> <span className="bluestuff">{this.props.cPrice}</span>
+                    </div>
+                    <div className="pricediv">
+                    <li>Posts: {this.props.posts}</li> <span className="bluestuff">{this.props.pPrice}</span>
+                    </div>
                 </ul>
             </div>
         )

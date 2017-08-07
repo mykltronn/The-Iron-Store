@@ -14,7 +14,9 @@ export default class Slides extends Component {
         slides = this.props.data.map((slide, index) => {
             let isActive = current == index;
             return (
-                <Slide getOption={this.props.getOptions} active={isActive} ident={slide.id} key={slide.id} label={slide.label} options={slide.options} checkout={checkout} checkOut={this.props.checkOut}/>
+                <Slide getOption={this.props.getOptions}
+                  checkOut={this.props.checkOut}
+                   active={isActive} ident={slide.id} key={slide.id} label={slide.label} options={slide.options} checkout={checkout}/>
 
             )})
         return (

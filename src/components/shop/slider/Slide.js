@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Slide extends Component {
 
@@ -21,7 +22,7 @@ export default class Slide extends Component {
                             </div>
                         )
                     })}
-                    <span className={"checkout-button" + (this.props.checkout ? ' checkout-button--active' : '')} onClick={this.props.checkOut} >checkout</span>
+                    <span className={"checkout-button" + (this.props.checkout ? ' checkout-button--active' : '')} onClick={this.props.checkOut} >Checkout</span>
                 </form>
             </div>
         );

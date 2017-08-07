@@ -1,3 +1,45 @@
 .checkoutTitle {
   text-align: center;
 }
+
+
+.checkoutInfo {
+  margin-top: 150px;
+}
+
+.totalReceipt {
+  font-size: 30px;
+  text-align: center;
+}
+
+.selectedItems {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.subtotalAmount {
+  text-align: center;
+  font-weight: bold;
+}
+
+.checkoutThings {
+  text-align: center;
+  margin-top: 75px;
+}
+
+.shopLink {
+  margin-left: 350px;
+}
+
+.reviewsLink {
+  margin-left: 290px;
+}
+
+.checkoutBtn {
+  margin-top: 10px;
+}
+
+.receiptInfo {
+  margin-top: 20px;
+
+}
