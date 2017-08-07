@@ -16,15 +16,18 @@ class Splash extends Component {
         return (
             <div className="bodydiv">
               <div className="titlediv">
-                <img className="logo" alt="logo" src={"logo2.png"}/>
-                <p>The New You is Ready</p>
+
+                <img className="logo" alt="logo" src={"NewMotherFuckingLogo.png"}/>
+
+                <p>Don't do you...Do Nu.</p>
+
               </div>
               <div className="buttondiv">
                 <SplashButtonOne />
                 <SplashButtonTwo />
               </div>
             <Background />
-            </div>
+          </div>
         )
     }
 }

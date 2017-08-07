@@ -17,9 +17,11 @@ class AdminBox extends Component {
   }
 
   loadProductsFromServer() {
-    axios.get("https://intense-river-24910.herokuapp.com/api/products")
+    fetch("https://intense-river-24910.herokuapp.com/api/products")
+      .then(res => res.json())
       .then(res => {
-        this.setState({data: res.data});
+        console.log(res.results);
+        this.setState({data: res.results});
     })
   }
 
@@ -27,26 +29,30 @@ class AdminBox extends Component {
     let products = this.state.data;
     product.id = Date.now();
     let newProducts = products.concat([product]);
-    this.setState({data: newProducts})
+    // this.setState({data: newProducts})
     axios.post("https://intense-river-24910.herokuapp.com/api/products", product)
     .catch(err =>{
       console.log(err);
-      this.setState({data: products});
+      this.setState({data: product});
     });
   }
 
   handleProductDelete(id) {
-    axios.delete(`${this.props.url}/${id}`)
+    let deleteUrl = 'https://intense-river-24910.herokuapp.com/api/products/' + id;
+    axios.delete(deleteUrl)
     .then(res => {
       console.log('Product deleted');
+      this.loadProductsFromServer();
     })
     .catch(err => {
       console.error(err);
     });
+
   }
 
   handleProductUpdate(id, product) {
-    axios.put(`${this.props.url}/${id}`, product)
+    let updateProductUrl = 'https://intense-river-24910.herokuapp.com/api/products/' + id;
+    axios.put(updateProductUrl, product)
     .catch(err => {
       console.log(err);
     })
@@ -59,13 +65,14 @@ class AdminBox extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Product List</h2>
+      <div className="adminDiv">
         <AdminProductList
           onProductDelete = {this.handleProductDelete}
           onProductUpdate = {this.handleProductUpdate}
-          data={this.state.data}/>
-        <AdminNuUForm onProductSubmit={this.handleProductSubmit}/>
+          data={this.state.data}
+          />
+        <AdminNuUForm onProductSubmit={this.handleProductSubmit}
+          />
       </div>
     )
   }

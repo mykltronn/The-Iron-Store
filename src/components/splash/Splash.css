@@ -1,5 +1,12 @@
+
 *{
+  font-family: 'Ubuntu', sans-serif;
   -webkit-transition:all .25s ease;
+}
+
+body {
+  padding: 10vh 0vw;
+  margin: 10vh;
 }
 
 .bodydiv {
@@ -9,12 +16,12 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
 }
 
 .link {
   text-decoration: none;
-  color: #7ba547;
+  color: #8cc7ff;
   font-size: 20px;
 }
 
@@ -36,9 +43,11 @@ p {
 .titlediv {
   z-index: 5;
   display: flex;
-  flex-flow: column nowrap;
+  text-align: center;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 .logo {
@@ -79,6 +88,7 @@ button:hover {
 .buttondiv {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   z-index: 5;
   display: flex;
   justify-content: space-around;
@@ -89,35 +99,44 @@ button:hover {
   z-index: -6;
 }
 
-/*.container2 {
-  filter: hue-rotate(40deg);
-  margin-top: -70vh;
-  z-index: 500;
-  width: 100vw;
-  height: 100vw;
-  min-height: 1000px;
-  min-width: 1000px;
-  background: -webkit-linear-gradient(-45deg, #2c3772 0%,#36468c 12%,#4b81aa 25%,#2b4277 39%,#1a2947 50%,#000000 54%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
-}*/
-
-
-
 .container1 {
   filter: grayscale() brightness(25%);
-  z-index: -5;
-  margin-top: -70vh;
-  width: 100vw;
-  height: 100vw;
-  min-height: 1000px;
-  min-width: 1000px;
+  z-index: -7;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
   justify-content: center;
   align-items: center;
 }
 
-.container1:before {
-   background-color: rgba(255,0,0,0.5);
+.container2 {
+  width: 110vw;
+  height: 150vh;
+  margin-top: -700px;
+}
+
+@media only screen and (min-width: 900px) {
+  .bodydiv {
+    margin-top: -20vh;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .buttondiv {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link {
+    font-size: 45px;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }

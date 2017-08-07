@@ -13,6 +13,7 @@ class AdminNuUForm extends Component {
  this.handleLikesChange = this.handleLikesChange.bind(this);
  this.handlePostsChange = this.handlePostsChange.bind(this);
  this.handleFriendsChange = this.handleFriendsChange.bind(this);
+ this.handleSubmit = this.handleSubmit.bind(this);
 
 
  this.state = {
@@ -23,40 +24,48 @@ class AdminNuUForm extends Component {
    price: '',
    likes: '',
    posts: '',
-   friends: ''
+   friends: '',
   };
  }
 
  handleTitleChange(event) {
- this.setState({ title: event.target.value });
+   this.setState({ title: event.target.value });
+   console.log(this.state.title);
  }
 
  handleDescriptionChange(event) {
- this.setState({ description: event.target.value });
+   this.setState({ description: event.target.value });
+   console.log(this.state.description);
  }
 
  handlePackageContentsChange(event) {
- this.setState({ package_contents: event.target.value });
+   this.setState({ package_contents: event.target.value });
+   console.log(this.state.package_contents);
  }
 
  handleImageChange(event) {
- this.setState({ image_url: event.target.value });
+   this.setState({ image_url: event.target.value });
+   console.log(this.state.image_url);
  }
 
  handlePriceChange(event) {
- this.setState({ price: event.target.value });
+   this.setState({ price: event.target.value });
+   console.log(this.state.price);
  }
 
  handleLikesChange(event) {
- this.setState({ likes: event.target.value });
+   this.setState({ likes: event.target.value });
+   console.log(this.state.likes);
  }
 
  handlePostsChange(event) {
- this.setState({ posts: event.target.value });
+   this.setState({ posts: event.target.value });
+   console.log(this.state.posts);
  }
 
  handleFriendsChange(event) {
-   this.setState({ friends: event.target.value })
+   this.setState({ friends: event.target.value });
+   console.log(this.state.friends);
  }
 
 
@@ -64,7 +73,7 @@ class AdminNuUForm extends Component {
    event.preventDefault();
    console.log(this.state);
    let title = this.state.title;
-   let description = this.state.description.trim();
+   let description = this.state.description;
    let package_contents = this.state.package_contents.trim();
    let image_url = this.state.image_url.trim();
    let price = this.state.price.trim();
@@ -75,34 +84,73 @@ class AdminNuUForm extends Component {
    if(!title || !description || !package_contents || !image_url || !price || !likes || !posts || !friends){
      return;
    }
-   this.props.onProductSubmit({title: title, description: description, package_contents: package_contents, image_url: image_url, price: price, likes: likes, posts: posts, friends: friends});
+   let product = {
+      title: title,
+      description: description,
+      package_contents: package_contents,
+      image_url: image_url,
+      price: price,
+      likes: likes,
+      posts: posts,
+      friends: friends
+    }
+
+   this.props.onProductSubmit(product);
    this.setState({title: '', description: '', package_contents: '', image_url: '', price: '', likes: '', posts: '', friends: ''});
  }
 
-
+//added some style changes
  render() {
    return (
-     <form method="POST" action="https://intense-river-24910.herokuapp.com/api/products" >
-       <input type='text' placeholder='Title' value={ this.state.title } onChange={ this.handleTitleChange } />
+    <div className="container">
+      <h1>Add a New Product</h1>
+     <form onSubmit={this.handleSubmit} className="form-horizontal" >
+       <div className="form-group">
+         <label className="col-sm-2 control-label">Title</label>
+         <div className="form-group-lg col-sm-12">
+           <input type='text' className="form-control" placeholder='Title' value={ this.state.title } onChange={ this.handleTitleChange } />
+         </div>
 
-        <input type='text' placeholder='Description' value={ this.state.description } onChange={ this.handleDescriptionChange } />
+          <label className="col-sm-2 control-label">Description</label>
+          <div className="col-sm-12">
+            <input className="adminInput form-control" rows="3" type='text' placeholder='Description' value={ this.state.description } onChange={ this.handleDescriptionChange } />
+          </div>
 
-        <input type='text' placeholder='Package Contents' value={ this.state.package_contents } onChange={ this.handlePackageContentsChange } />
+          <label className="col-sm-2 control-label">Package Contents</label>
+          <div className="col-sm-12">
+            <input className="adminInput form-control" type='text' placeholder='Package Contents' value={ this.state.package_contents } onChange={ this.handlePackageContentsChange } />
+          </div>
 
-        <input type='text' placeholder='Image URL' value={ this.state.image_url } onChange={ this.handleImageChange } />
+          <label className="col-sm-2 control-label">Image Url</label>
+          <div className="col-sm-12">
+            <input className="adminInput form-control" type='text' placeholder='Image URL' value={ this.state.image_url } onChange={ this.handleImageChange } />
+          </div>
 
-        <input type='text' placeholder='Price' value={ this.state.price } onChange={ this.handlePriceChange } />
+            <label className="col-sm-3 control-label">Price</label>
+            <div className="col-sm-4">
+              <input className="adminInput form-control" type='text' placeholder='Price' value={ this.state.price } onChange={ this.handlePriceChange } />
+            </div>
 
-        <input type='text' placeholder='Likes' value={ this.state.likes } onChange={ this.handleLikesChange } />
+            <label className="col-sm-3 control-label">Likes</label>
+            <div className="col-sm-4">
+              <input className="adminInput form-control" type='text' placeholder='Likes' value={ this.state.likes } onChange={ this.handleLikesChange } />
+            </div>
 
-        <input type='text' placeholder='Posts' value={ this.state.posts } onChange={ this.handlePostsChange } />
+            <label className="col-sm-3 control-label">Posts</label>
+            <div className="col-sm-4">
+              <input className="adminInput form-control" type='text' placeholder='Posts' value={ this.state.posts } onChange={ this.handlePostsChange } />
+            </div>
 
-        <input type='text' placeholder='Friends' value={ this.state.friends } onChange={ this.handleFriendsChange } />
-
-        <input
-           type = 'submit'
-           value = 'Post'/>
-         </form>
+            <label className="col-sm-3 control-label">Friends</label>
+            <div className="col-sm-4">
+              <input className="adminInput form-control" type='text' placeholder='Friends' value={ this.state.friends } onChange={ this.handleFriendsChange } />
+            </div>
+          <input className="adminSubmit btn btn-primary btn-lg"
+             type = 'submit'
+             value = 'Post' />
+        </div>
+      </form>
+    </div>
        )
      }
 }

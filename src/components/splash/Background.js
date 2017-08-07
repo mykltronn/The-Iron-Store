@@ -34,13 +34,13 @@ componentDidMount() {
 
   render() {
     return (
-  <div>
+
   <div className="container2">
     <div className="container1">
       {this.state.pictures}
     </div>
   </div>
-  </div>
+
 
     )
 

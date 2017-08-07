@@ -4,6 +4,7 @@ import './styles/shop.css'
 // import children
 import ProductCard from './ProductCard.js';
 import OptionSlider from './slider/OptionSlider.js'
+import TempHeader from '../TempHeader/TempHeader.js'
 
 
 
@@ -23,16 +24,14 @@ export default class Shop extends Component {
         let url = "https://intense-river-24910.herokuapp.com/api/products"
         fetch(url).then(resp => resp.json())
             .then(resp => {
-                this.setState({ NuUData: resp })
+              console.log(resp);
+                this.setState({ NuUData: resp.results})
             })
     }
 
     handleClick(event) {
-        console.log("handleClick fires");
-        console.log(event.target.id);
         let NuUData = this.state.NuUData
         for(let i=0; i < NuUData.length; i++){
-            console.log(NuUData[i]._id);
             if(event.target.id == NuUData[i]._id) {
                 this.setState({ selectedU: NuUData[i] })
             }
@@ -54,8 +53,12 @@ export default class Shop extends Component {
             })
 
         return (
+          <div className="shop-body-wrapper">
+            <TempHeader />
+          <div className="shop-title">Make your selection from these options</div>
             <div className="shop-component">
                 {productCard}
+            </div>
             </div>
 
         )
