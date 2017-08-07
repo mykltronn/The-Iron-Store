@@ -31,6 +31,9 @@ class AdminBox extends Component {
     let newProducts = products.concat([product]);
     // this.setState({data: newProducts})
     axios.post("https://intense-river-24910.herokuapp.com/api/products", product)
+    .then(res => {
+      this.loadProductsFromServer();
+    })
     .catch(err =>{
       console.log(err);
     });
@@ -52,6 +55,9 @@ class AdminBox extends Component {
   handleProductUpdate(id, product) {
     let updateProductUrl = 'https://intense-river-24910.herokuapp.com/api/products/' + id;
     axios.put(updateProductUrl, product)
+    .then(res => {
+      this.loadProductsFromServer();
+    })
     .catch(err => {
       console.log(err);
     })
