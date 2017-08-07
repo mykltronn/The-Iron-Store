@@ -32,7 +32,6 @@ export default class OptionsSlider extends Component {
         .then(resp => resp.json())
         .then(resp => {
           let optionAndLabels = resp.results.questions;
-          console.log(optionAndLabels);
           this.setState({questions: optionAndLabels})
         })
     }
