@@ -1,7 +1,8 @@
 // reviews.js
 import React, { Component } from 'react';
 import ReviewCard from './ReviewCard.js';
-import TempHeader from '../TempHeader/TempHeader.js'
+import TempHeader from '../TempHeader/TempHeader.js';
+import ReviewForm from './ReviewForm.js';
 // import styles
 import './Reviews.css';
 
@@ -39,6 +40,9 @@ export default class Reviews extends Component {
               </div>
               <div className="review-cards-container">
                 {this.state.reviews}
+              </div>
+              <div>
+                <ReviewForm />
               </div>
         </div>
      )
