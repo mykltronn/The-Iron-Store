@@ -4,7 +4,7 @@ import './styles/shop.css'
 // import children
 import ProductCard from './ProductCard.js';
 import OptionSlider from './slider/OptionSlider.js'
-import TempHeader from '../TempHeader/TempHeader.js'
+import FullLayout from '../navigation/FullLayout.js';
 
 
 
@@ -57,7 +57,9 @@ export default class Shop extends Component {
             <TempHeader />
           <div className="shop-title">Make your selection from these options</div>
             <div className="shop-component">
+                <FullLayout>
                 {productCard}
+                </FullLayout>
             </div>
             </div>
 
