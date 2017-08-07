@@ -103,6 +103,7 @@ class AdminNuUForm extends Component {
  render() {
    return (
     <div className="container">
+      <h1>Add a New Product</h1>
      <form onSubmit={this.handleSubmit} className="form-horizontal" >
        <div className="form-group">
          <label className="col-sm-2 control-label">Title</label>
