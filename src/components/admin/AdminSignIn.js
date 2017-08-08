@@ -6,6 +6,7 @@ export default class AdminSignIn extends Component {
 
  this.handleUsernameChange = this.handleUsernameChange.bind(this);
  this.handlePasswordChange = this.handlePasswordChange.bind(this);
+ this.handleUserSubmit = this.handleUserSubmit.bind(this);
 
   this.state = {
     username: '',
@@ -21,12 +22,22 @@ export default class AdminSignIn extends Component {
    this.setState({password: event.target.value});
  }
 
+ handleUserSubmit(event) {
+   event.preventDefault();
+   let username = this.state.username;
+   let password = this.state.password;
+   if(!username || !password){
+     return;
+   }
+   this.props.handleAdminSubmit(username, password);
+ }
+
   render() {
     return (
       <div>
         <h1>Admin Sign In </h1>
-          <div className="container">
-          <form className="form-horizontal form-group" onSubmit={this.props.handleAdminSubmit}>
+          <div className="container adminLogin">
+          <form className="form-horizontal form-group" onSubmit={this.handleUserSubmit}>
             <div className='col-md-6'>
               <label className="control-label">Username</label>
               <input className="form-control" onChange={this.handleUsernameChange} value={this.state.username}
