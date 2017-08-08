@@ -16,7 +16,7 @@ export default class Slides extends Component {
             return (
                 <Slide getOption={this.props.getOptions}
                   checkOut={this.props.checkOut}
-                   active={isActive} ident={slide.id} key={slide.id} label={slide.label} options={slide.options} checkout={checkout}/>
+                   active={isActive} ident={slide.id} key={slide.id} label={slide.label} before={slide.image_before} after={slide.image_after} description={slide.product_description} options={slide.options} checkout={checkout} />
 
             )})
         return (
