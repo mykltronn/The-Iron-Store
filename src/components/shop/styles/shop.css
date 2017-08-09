@@ -47,6 +47,7 @@
  }
 
 .shop-title-desc {
+  text-align: center;
   margin-left: 3vw;
   margin-right: 3vw;
   color: #65CBE3;
@@ -313,13 +314,13 @@
 
 }
 
-.form {
+/*.form {
 
 }
 
 .labelandOptions {
 
-}
+}*/
 
 .option-label {
   display: flex;
@@ -424,7 +425,7 @@
 }
 
 
-@media only screen and (max-width: 1000px) {
+/*@media only screen and (max-width: 1000px) {
   .shop-title {
     font-size: 40px;
   }
@@ -470,4 +471,4 @@
   .shop-title {
     font-size: 10px;
   }
-}
+}*/
