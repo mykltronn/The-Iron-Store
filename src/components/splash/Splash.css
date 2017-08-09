@@ -9,6 +9,13 @@ body {
   margin: 10vh;
 }
 
+h1 {
+  font-weight: normal;
+  font-size: 20px;
+  color: #65CBE3;
+  margin-top: 15px;
+}
+
 .bodydiv {
   z-index: 5;
   min-height: 80vw;
@@ -35,7 +42,7 @@ body {
 p {
   color: white;
   z-index: 5;
-  margin-top: 20px;
+  margin-top: 5px;
   font-size: 30px;
   font-weight: bold;
 }
