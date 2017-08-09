@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './TempHeader.css'
+// <div className= "nav-indicator-tab"> Menu ▲ </div>
 
 const TempHeader = (props) => {
     return (
@@ -12,7 +13,6 @@ const TempHeader = (props) => {
                 <NavLink activeClassName="selected" className="nav-link" exact to="/reviews">Reviews</NavLink>
                 <NavLink activeClassName="selected" className="nav-link" exact to="/admin">Admin</NavLink>
             </nav>
-            <div className= "nav-indicator-tab"> Menu ▲ </div>
             {props.children}
         </div>
     )

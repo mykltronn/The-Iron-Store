@@ -55,7 +55,7 @@ export default class Shop extends Component {
         return (
         <div className="shop-body-wrapper move-to">
             <TempHeader />
-            <div className="shop-title">Make your selection from these options</div>
+            <h1 className="shop-title">Choose the Ü You'd Never Be Without Us</h1>
             <div className="shop-component">
                 {productCard}
             </div>
