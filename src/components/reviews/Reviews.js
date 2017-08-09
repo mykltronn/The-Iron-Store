@@ -33,7 +33,7 @@ export default class Reviews extends Component {
 // added the ability to post a review in review form.
    render() {
      return (
-        <div>
+        <div className="review-body">
             <TempHeader />
               <div className="header-container">
                 <h4>Read what our customers have to say...</h4>
