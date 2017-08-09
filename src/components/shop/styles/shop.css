@@ -221,7 +221,6 @@
   display: block;
   width: 100%;
   overflow: hidden;
-  white-space: nowrap;
 }
 
 .slide {
@@ -365,6 +364,7 @@
 }
 
 .description_options {
+  text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
   font-weight: normal;
@@ -373,7 +373,8 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  align-content: center;
+  align-self: center;
 }
 
 .images {
