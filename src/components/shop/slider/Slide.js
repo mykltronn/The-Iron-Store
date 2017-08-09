@@ -11,6 +11,7 @@ export default class Slide extends Component {
         return (
             <div className={"slide" + (this.props.active ? ' slide--active' : '')}>
                 <form className="form">
+                  <h3 className="description_options">{this.props.description}</h3>
                   <div className="labelandOptions">
                     <label className="option-label">{this.props.label}</label>
                     <div className="input-form">
@@ -27,14 +28,14 @@ export default class Slide extends Component {
                             </div>
                         )
                     })}
-                    <h3 className="description_options">{this.props.description}</h3>
+
                     <div className="images">
                       <div className="images-and-labels">
                       <label>Old U</label>
                       <img className="product_before" src={this.props.before} />
                       </div>
                       <div className="images-and-labels">
-                      <label>Nu U</label>
+                      <label className="NuULabel">Nu U</label>
                       <img className="product_after" src={this.props.after} />
                       </div>
                     </div>

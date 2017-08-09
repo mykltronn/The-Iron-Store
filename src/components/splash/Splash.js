@@ -18,7 +18,7 @@ class Splash extends Component {
               <div className="titlediv">
 
                 <img className="logo" alt="logo" src={"NewMotherFuckingLogo.png"}/>
-
+                <h1>revitalize your online presence</h1>
                 <p>Don't do you...Do Nu.</p>
 
               </div>
