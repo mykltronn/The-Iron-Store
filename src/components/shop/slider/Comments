@@ -1,0 +1,44 @@
+import React, { Component } from 'react'
+
+class Comments extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+          pictuers: [],
+          title: "",
+          firstName: "",
+          lastName: "",
+          comment: ""
+      };
+}
+
+
+componentDidMount() {
+
+  fetch('https://randomuser.me/api')
+  .then(results => {
+      return results.json();
+    }).then(data => {
+      let pictures = data.results.map((pic) => {
+        return(
+          <div key={pic.results}>
+            <img src={pic.picture.medium} />
+            <p>{pic.name.title}</p>
+            <p>{pic.name.title}</p>
+
+          </div>
+        )
+      })
+      this.setState({pictures: pictures});
+      console.log("state", this.state.pictures);
+    })
+}
+
+render() {
+    return (
+      <div className="red"></div>
+    )
+}
+}
+
+export default Comments;

@@ -55,7 +55,10 @@ export default class Shop extends Component {
         return (
         <div className="shop-body-wrapper move-to">
             <TempHeader />
-            <h1 className="shop-title">Choose the Ü You'd Never Be Without Us</h1>
+
+
+            <div className="shop-title-desc">revitalizing your online presence begins with deciding who you want to be.  You can be anyone you want to be.  Now is your chance to re-create yourself.</div>
+            <div className="shop-title">Make your selection from these options</div>
             <div className="shop-component">
                 {productCard}
             </div>
